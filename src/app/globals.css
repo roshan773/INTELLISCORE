@@ -1,0 +1,139 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'Chorus';
+  src: url('/fonts/Chorus.woff2') format('woff2'),
+       url('/fonts/Chorus.woff') format('woff'),
+       url('/fonts/Chorus.ttf') format('truetype'),
+       url('/fonts/Chorus.otf') format('opentype');
+  font-weight: 400 900;
+  font-display: swap;
+  font-style: normal;
+}
+
+@theme {
+  --color-brand-slate: #283845;
+  --color-brand-dark: #17232C;
+  --color-brand-light-slate: #334757;
+  --color-brand-orange: #FFA649;
+  --color-brand-orange-light: #ffb866;
+  --color-brand-orange-dark: #e68d2e;
+  --color-brand-cream: #F4F1EB;
+  --color-brand-surface: #1E2B35;
+  --color-brand-border: rgba(255, 255, 255, 0.08);
+
+  --font-chorus: 'Chorus', var(--font-syne), 'Oswald', sans-serif;
+  --font-sans: var(--font-manrope), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+:root {
+  --bg-slate: #283845;
+  --bg-dark: #17232C;
+  --brand-orange: #FFA649;
+  --brand-cream: #F4F1EB;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #283845;
+  color: #F4F1EB;
+  font-family: var(--font-sans);
+}
+
+body {
+  background-color: #283845;
+  color: #F4F1EB;
+  overflow-x: hidden;
+  selection-background-color: #FFA649;
+  selection-color: #17232C;
+}
+
+::selection {
+  background: #FFA649;
+  color: #17232C;
+}
+
+/* Typography helper classes */
+.font-display {
+  font-family: var(--font-chorus);
+  letter-spacing: -0.02em;
+}
+
+.font-body {
+  font-family: var(--font-sans);
+}
+
+/* Technical grid patterns */
+.tech-grid {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}
+
+.tech-grid-dense {
+  background-size: 20px 20px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 166, 73, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 166, 73, 0.05) 1px, transparent 1px);
+}
+
+.tech-grid-dots {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Glow and subtle effects */
+.glow-orange {
+  box-shadow: 0 0 40px -10px rgba(255, 166, 73, 0.35);
+}
+
+.glow-orange-sm {
+  box-shadow: 0 0 20px -5px rgba(255, 166, 73, 0.25);
+}
+
+.glow-text-orange {
+  text-shadow: 0 0 24px rgba(255, 166, 73, 0.4);
+}
+
+.border-subtle {
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.border-subtle-orange {
+  border-color: rgba(255, 166, 73, 0.2);
+}
+
+/* Glassmorphic panels */
+.glass-panel {
+  background: rgba(40, 56, 69, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-dark {
+  background: rgba(23, 35, 44, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #17232C;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #334757;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #FFA649;
+}
