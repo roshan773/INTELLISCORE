@@ -25,18 +25,18 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "INTELLISCORE — BUILD. AUTOMATE. SECURE.",
+  title: "INTELLUSCORE — BUILD. AUTOMATE. SECURE.",
   description:
     "We build intelligent digital experiences, automate complex workflows, and secure the technology that powers modern businesses. Specializing in Web Development, AI Automation, Custom Software, and Cybersecurity.",
   keywords: [
-    "INTELLISCORE",
+    "INTELLUSCORE",
     "Web Development",
     "AI Automation",
     "Cybersecurity",
     "Custom Software Engineering",
     "Digital Transformation",
   ],
-  authors: [{ name: "INTELLISCORE" }],
+  authors: [{ name: "INTELLUSCORE" }],
   icons: {
     icon: "/favicon.ico",
   },

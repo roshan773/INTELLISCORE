@@ -20,7 +20,7 @@ export default function Footer() {
                 IS
               </div>
               <span className="font-display text-2xl font-bold tracking-wider text-brand-cream">
-                INTELLI<span className="text-brand-olive-light">SCORE</span>
+                INTELLU<span className="text-brand-olive-light">SCORE</span>
               </span>
             </Link>
 
@@ -176,8 +176,8 @@ export default function Footer() {
             <div className="space-y-2.5 text-xs font-mono text-brand-cream-muted">
               <div className="flex items-center gap-2">
                 <Mail className="w-3.5 h-3.5 text-brand-cream shrink-0" />
-                <a href="mailto:contact@intelliscore.io" className="truncate hover:text-brand-cream">
-                  contact@intelliscore.io
+                <a href="mailto:contact@intelluscore.io" className="truncate hover:text-brand-cream">
+                  contact@intelluscore.io
                 </a>
               </div>
               <div className="flex items-center gap-2">
@@ -195,7 +195,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-brand-cream-muted/50">
           <div>
-            © {new Date().getFullYear()} INTELLISCORE INC. — BUILD. AUTOMATE. SECURE. ALL RIGHTS RESERVED.
+            © {new Date().getFullYear()} INTELLUSCORE INC. — BUILD. AUTOMATE. SECURE. ALL RIGHTS RESERVED.
           </div>
 
           <button
