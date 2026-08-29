@@ -2,13 +2,15 @@ import { NextRequest, NextResponse } from "next/server";
 import { submitContactInquiryServerSide } from "@/lib/server/api-client";
 import { checkRateLimit } from "@/lib/server/rate-limiter";
 
+export const dynamic = "force-dynamic";
+
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 export async function POST(request: NextRequest) {
   try {
     // 1. Abuse Protection & Rate Limiting
     const ip = request.headers.get("x-forwarded-for")?.split(",")[0].trim() || "127.0.0.1";
-    const { allowed } = checkRateLimit(ip, 5, 60000); // Max 5 submissions per minute per IP
+    const { allowed } = checkRateLimit(ip, 10, 60000);
 
     if (!allowed) {
       return NextResponse.json(
@@ -48,7 +50,7 @@ export async function POST(request: NextRequest) {
     const sanitizedMessage = typeof message === "string" ? message.slice(0, 2000) : "";
 
     // 3. Server-Side Execution with Private Key
-    await submitContactInquiryServerSide({
+    const result = await submitContactInquiryServerSide({
       name: name.trim(),
       email: email.trim(),
       service: sanitizedService,
@@ -60,12 +62,11 @@ export async function POST(request: NextRequest) {
     return NextResponse.json(
       {
         success: true,
-        message: "Discovery request successfully received. Our engineering team will contact you within 24 hours.",
+        message: result.message || "Discovery request successfully received.",
       },
       { status: 200 }
     );
   } catch (error) {
-    // Log safe diagnostic on server without leaking secrets
     console.error("Server API Error in /api/contact:", error instanceof Error ? error.message : "Unknown error");
 
     return NextResponse.json(

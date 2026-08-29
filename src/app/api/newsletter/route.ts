@@ -2,12 +2,14 @@ import { NextRequest, NextResponse } from "next/server";
 import { submitNewsletterServerSide } from "@/lib/server/api-client";
 import { checkRateLimit } from "@/lib/server/rate-limiter";
 
+export const dynamic = "force-dynamic";
+
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 export async function POST(request: NextRequest) {
   try {
     const ip = request.headers.get("x-forwarded-for")?.split(",")[0].trim() || "127.0.0.1";
-    const { allowed } = checkRateLimit(ip, 5, 60000);
+    const { allowed } = checkRateLimit(ip, 10, 60000);
 
     if (!allowed) {
       return NextResponse.json(

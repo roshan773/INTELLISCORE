@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import { checkRateLimit } from "@/lib/server/rate-limiter";
 
+export const dynamic = "force-dynamic";
+
 export async function POST(request: NextRequest) {
   try {
     const ip = request.headers.get("x-forwarded-for")?.split(",")[0].trim() || "127.0.0.1";
@@ -23,7 +25,6 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Validate payload without exposing any secret or internal parameters
     const { action } = body || {};
     if (!action || typeof action !== "string") {
       return NextResponse.json(
@@ -32,7 +33,6 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Server-side execution only — private keys remain isolated on server
     return NextResponse.json(
       {
         success: true,
