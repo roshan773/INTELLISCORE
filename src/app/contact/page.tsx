@@ -44,19 +44,19 @@ const discoverySteps = [
 const directChannels = [
   {
     title: "Engineering Discovery Desk",
-    email: "contact@intelliscore.io",
+    email: "contact@intelluscore.io",
     desc: "For general inquiries, RFPs, and architecture consultations.",
     sla: "Response within 24 hours",
   },
   {
     title: "Security & Vulnerability Desk",
-    email: "security@intelliscore.io",
+    email: "security@intelluscore.io",
     desc: "For security audits, penetration reports, and emergency incidents.",
     sla: "Immediate Priority",
   },
   {
     title: "Strategic Partnerships",
-    email: "partners@intelliscore.io",
+    email: "partners@intelluscore.io",
     desc: "For co-founding ventures and enterprise integrations.",
     sla: "48-Hour Response",
   },
