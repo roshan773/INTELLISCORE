@@ -140,11 +140,11 @@ export default function ContactPage() {
                 </div>
 
                 <a
-                  href="mailto:contact@intelluscore.io"
+                  href="mailto:support.intelluscore@gmail.com"
                   className="flex items-center gap-2.5 text-sm font-mono text-brand-cream font-bold hover:underline"
                 >
                   <Mail className="w-4 h-4 text-brand-olive-light" />
-                  <span>contact@intelluscore.io</span>
+                  <span>support.intelluscore@gmail.com</span>
                 </a>
 
                 <p className="text-xs text-brand-cream-muted font-light leading-relaxed">

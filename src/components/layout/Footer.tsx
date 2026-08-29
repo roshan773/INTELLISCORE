@@ -16,11 +16,11 @@ export default function Footer() {
           {/* Brand Col */}
           <div className="lg:col-span-4 space-y-6">
             <Link href="/" className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-full bg-brand-cream text-brand-olive-dark flex items-center justify-center font-display font-black text-xs">
-                IS
+              <div className="w-8 h-8 rounded-full flex items-center justify-center overflow-hidden">
+                <img src="/Intelluscore favicon.ico" alt="INTELLUSCORE Emblem" className="w-full h-full object-contain" />
               </div>
               <span className="font-display text-2xl font-bold tracking-wider text-brand-cream">
-                INTELLU<span className="text-brand-olive-light">SCORE</span>
+                INTELLUS<span className="text-brand-olive-light">CORE</span>
               </span>
             </Link>
 
@@ -166,8 +166,8 @@ export default function Footer() {
             <div className="space-y-2.5 text-xs font-mono text-brand-cream-muted">
               <div className="flex items-center gap-2">
                 <Mail className="w-3.5 h-3.5 text-brand-cream shrink-0" />
-                <a href="mailto:contact@intelluscore.io" className="truncate hover:text-brand-cream">
-                  contact@intelluscore.io
+                <a href="mailto:support.intelluscore@gmail.com" className="truncate hover:text-brand-cream">
+                  support.intelluscore@gmail.com
                 </a>
               </div>
               <div className="flex items-center gap-2">
