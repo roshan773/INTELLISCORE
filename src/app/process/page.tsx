@@ -132,6 +132,13 @@ export default function ProcessPage() {
 
       {/* Page Header */}
       <section className="relative pt-40 pb-20 px-6 md:px-12 bg-gradient-to-b from-brand-olive-dark via-brand-olive-deep to-brand-olive-dark border-b border-brand-cream/10 overflow-hidden">
+        {/* Background Image with Dark Scrim */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center pointer-events-none opacity-25 mix-blend-luminosity"
+          style={{ backgroundImage: "url('/images/hero-process-bg.jpg')" }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-brand-olive-dark/90 via-brand-olive-dark/60 to-brand-olive-dark pointer-events-none" />
+
         <div className="absolute inset-0 tech-grid opacity-30 pointer-events-none" />
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="flex items-center gap-3 mb-6 font-mono text-xs text-brand-cream-muted uppercase">
