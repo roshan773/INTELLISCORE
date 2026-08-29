@@ -89,7 +89,7 @@ export default function Intro() {
 
           <h2 className="intro-title-text font-display text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-bold uppercase text-brand-olive-dark tracking-tight leading-[0.88] max-w-6xl">
             Technology that moves{" "}
-            <span className="text-brand-olive underline decoration-brand-olive/30">
+            <span className="text-brand-olive decoration-brand-olive/30">
               business forward.
             </span>
           </h2>
