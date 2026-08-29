@@ -132,7 +132,7 @@ export default function Hero() {
             <div className="hero-action-group flex flex-wrap items-center gap-4 sm:gap-6">
               <MagneticButton
                 variant="primary"
-                href="#solutions"
+                href="/solutions"
                 className="rounded-full text-xs sm:text-sm px-8 py-4"
               >
                 <span>Explore Solutions</span>
@@ -140,7 +140,7 @@ export default function Hero() {
               </MagneticButton>
               <MagneticButton
                 variant="secondary"
-                href="#cta"
+                href="/contact"
                 className="rounded-full text-xs sm:text-sm px-8 py-4"
               >
                 <span>Start Project</span>

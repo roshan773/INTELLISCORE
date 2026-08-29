@@ -107,28 +107,25 @@ export default function Services() {
                 key={service.num}
                 onMouseEnter={() => setActiveService(index)}
                 onClick={() => setActiveService(index)}
-                className={`relative rounded-2xl transition-all duration-500 cursor-pointer overflow-hidden border ${
-                  isActive
+                className={`relative rounded-2xl transition-all duration-500 cursor-pointer overflow-hidden border ${isActive
                     ? "bg-brand-olive-surface border-brand-cream shadow-2xl shadow-black/60 p-8 md:p-12"
                     : "bg-brand-olive-surface/30 border-brand-cream/15 hover:border-brand-cream/40 p-6 md:p-8"
-                }`}
+                  }`}
               >
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                   {/* Left Column: Number & Title */}
                   <div className="lg:col-span-5 flex items-start gap-6">
                     <span
-                      className={`font-display text-5xl md:text-7xl font-black transition-all duration-300 ${
-                        isActive ? "text-brand-cream" : "text-brand-cream/25"
-                      }`}
+                      className={`font-display text-5xl md:text-7xl font-black transition-all duration-300 ${isActive ? "text-brand-cream" : "text-brand-cream/25"
+                        }`}
                     >
                       {service.num}
                     </span>
                     <div>
                       <div className="flex items-center gap-3 mb-1.5">
                         <Icon
-                          className={`w-5 h-5 ${
-                            isActive ? "text-brand-olive-light" : "text-brand-cream/50"
-                          }`}
+                          className={`w-5 h-5 ${isActive ? "text-brand-olive-light" : "text-brand-cream/50"
+                            }`}
                         />
                         <span className="text-xs font-mono tracking-wider text-brand-olive-light uppercase font-bold">
                           {service.tagline}
@@ -161,11 +158,10 @@ export default function Services() {
                   {/* Right Column: Arrow Button */}
                   <div className="lg:col-span-1 flex justify-end">
                     <div
-                      className={`w-14 h-14 rounded-full border flex items-center justify-center transition-all duration-300 ${
-                        isActive
+                      className={`w-14 h-14 rounded-full border flex items-center justify-center transition-all duration-300 ${isActive
                           ? "bg-brand-cream border-brand-cream text-brand-olive-dark rotate-45 scale-110 shadow-lg shadow-brand-cream/20"
                           : "border-brand-cream/20 text-brand-cream/40"
-                      }`}
+                        }`}
                     >
                       <ArrowUpRight className="w-6 h-6" />
                     </div>

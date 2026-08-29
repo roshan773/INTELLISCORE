@@ -106,27 +106,24 @@ export default function AIAutomation() {
               <div
                 key={stg.step}
                 onClick={() => setActiveStage(idx)}
-                className={`p-7 rounded-2xl border transition-all duration-300 cursor-pointer flex flex-col justify-between relative group ${
-                  isSelected
+                className={`p-7 rounded-2xl border transition-all duration-300 cursor-pointer flex flex-col justify-between relative group ${isSelected
                     ? "bg-brand-olive-surface border-brand-cream shadow-2xl shadow-brand-cream/15 scale-[1.03]"
                     : "bg-brand-olive-surface/30 border-brand-cream/15 hover:border-brand-cream/30 hover:bg-brand-olive-surface/60"
-                }`}
+                  }`}
               >
                 <div>
                   <div className="flex items-center justify-between mb-4">
                     <span
-                      className={`font-display text-4xl font-bold ${
-                        isSelected ? "text-brand-cream" : "text-brand-cream/30"
-                      }`}
+                      className={`font-display text-4xl font-bold ${isSelected ? "text-brand-cream" : "text-brand-cream/30"
+                        }`}
                     >
                       {stg.step}
                     </span>
                     <div
-                      className={`w-11 h-11 rounded-full flex items-center justify-center transition-colors ${
-                        isSelected
+                      className={`w-11 h-11 rounded-full flex items-center justify-center transition-colors ${isSelected
                           ? "bg-brand-cream text-brand-olive-dark shadow-md"
                           : "bg-brand-olive-dark border border-brand-cream/20 text-brand-cream"
-                      }`}
+                        }`}
                     >
                       <Icon className="w-5 h-5" />
                     </div>
