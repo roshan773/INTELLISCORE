@@ -68,7 +68,7 @@ export default function CTA() {
                     Discovery Request Received
                   </h3>
                   <p className="text-sm text-brand-cream-muted max-w-md mx-auto">
-                    An INTELLISCORE principal engineer will review your project requirements and get
+                    An INTELLUSCORE principal engineer will review your project requirements and get
                     back to you within 24 hours.
                   </p>
                   <button

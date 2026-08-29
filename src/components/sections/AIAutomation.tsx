@@ -21,7 +21,7 @@ const stages = [
     icon: FileSpreadsheet,
     desc: "Repetitive manual entry, fragmented spreadsheets, siloed tools, and delayed cross-team handoffs.",
     stats: "Slow • Error-Prone • Costly",
-    status: "Before INTELLISCORE",
+    status: "Before INTELLUSCORE",
   },
   {
     step: "02",
@@ -70,7 +70,7 @@ export default function AIAutomation() {
             <span className="text-brand-olive-light">TO INTELLIGENT VELOCITY.</span>
           </h2>
           <p className="text-brand-cream-muted text-base sm:text-lg font-light">
-            How INTELLISCORE transforms clunky, error-prone operations into autonomous AI workflows
+            How INTELLUSCORE transforms clunky, error-prone operations into autonomous AI workflows
             that run quietly and flawlessly 24 hours a day.
           </p>
         </div>
