@@ -34,7 +34,7 @@ export default function Statistics() {
     gsap.registerPlugin(ScrollTrigger);
 
     const ctx = gsap.context(() => {
-      gsap.from(".stat-item", {
+      gsap.from(".stat-card-pill", {
         scrollTrigger: {
           trigger: sectionRef.current,
           start: "top 80%",
@@ -53,24 +53,24 @@ export default function Statistics() {
   return (
     <section
       ref={sectionRef}
-      className="relative py-24 px-6 md:px-12 bg-brand-slate overflow-hidden border-t border-b border-white/5"
+      className="relative py-28 px-6 md:px-12 bg-brand-olive-deep overflow-hidden border-t border-b border-brand-cream/10"
     >
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {stats.map((stat, idx) => (
             <div
               key={idx}
-              className="stat-item p-6 rounded-sm bg-brand-dark/50 border border-white/10 flex flex-col justify-between"
+              className="stat-card-pill p-8 rounded-2xl bg-brand-olive-surface border border-brand-cream/15 flex flex-col justify-between shadow-2xl"
             >
               <div>
-                <div className="font-display text-5xl sm:text-6xl md:text-7xl font-black text-brand-orange mb-2">
+                <div className="font-display text-6xl sm:text-7xl md:text-8xl font-black text-brand-cream mb-2 leading-none">
                   {stat.value}
                 </div>
-                <div className="font-display text-lg font-bold text-white mb-1">
+                <div className="font-display text-xl sm:text-2xl font-bold text-white mb-1">
                   {stat.label}
                 </div>
               </div>
-              <div className="text-xs font-mono text-brand-cream/50 pt-4 border-t border-white/5">
+              <div className="text-xs font-mono text-brand-cream-muted pt-4 border-t border-brand-cream/10">
                 {stat.sub}
               </div>
             </div>

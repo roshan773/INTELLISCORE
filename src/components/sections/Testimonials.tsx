@@ -44,63 +44,63 @@ export default function Testimonials() {
   const active = testimonials[currentIdx];
 
   return (
-    <section className="relative py-28 px-6 md:px-12 bg-brand-dark overflow-hidden border-t border-white/5">
+    <section className="relative py-32 px-6 md:px-12 bg-brand-olive-dark overflow-hidden border-t border-brand-cream/10">
       <div className="max-w-5xl mx-auto">
         {/* Header */}
         <div className="flex items-center justify-between mb-16">
           <div className="flex items-center gap-3">
-            <span className="h-px w-10 bg-brand-orange" />
-            <span className="text-xs font-mono tracking-widest text-brand-orange uppercase">
+            <span className="h-0.5 w-12 bg-brand-cream" />
+            <span className="text-xs font-mono tracking-widest text-brand-cream uppercase font-bold">
               // EXECUTIVE ENDORSEMENTS
             </span>
           </div>
 
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-3">
             <button
               onClick={prev}
               aria-label="Previous testimonial"
-              className="w-10 h-10 rounded-sm bg-brand-surface border border-white/10 hover:border-brand-orange text-white hover:text-brand-orange flex items-center justify-center transition-colors"
+              className="w-12 h-12 rounded-full bg-brand-olive-surface border border-brand-cream/20 hover:border-brand-cream text-brand-cream flex items-center justify-center transition-all cursor-pointer shadow-lg"
             >
-              <ChevronLeft className="w-4 h-4" />
+              <ChevronLeft className="w-5 h-5" />
             </button>
             <button
               onClick={next}
               aria-label="Next testimonial"
-              className="w-10 h-10 rounded-sm bg-brand-surface border border-white/10 hover:border-brand-orange text-white hover:text-brand-orange flex items-center justify-center transition-colors"
+              className="w-12 h-12 rounded-full bg-brand-olive-surface border border-brand-cream/20 hover:border-brand-cream text-brand-cream flex items-center justify-center transition-all cursor-pointer shadow-lg"
             >
-              <ChevronRight className="w-4 h-4" />
+              <ChevronRight className="w-5 h-5" />
             </button>
           </div>
         </div>
 
         {/* Big Testimonial Display */}
-        <div className="p-8 md:p-14 rounded-sm bg-brand-surface/70 border border-white/10 relative overflow-hidden shadow-2xl">
-          <Quote className="w-16 h-16 text-brand-orange/15 absolute top-6 right-8 pointer-events-none" />
+        <div className="p-8 md:p-14 rounded-2xl bg-brand-olive-surface border border-brand-cream/20 relative overflow-hidden shadow-2xl">
+          <Quote className="w-20 h-20 text-brand-cream/10 absolute top-6 right-8 pointer-events-none" />
 
           {/* Rating stars */}
-          <div className="flex items-center gap-1 text-brand-orange mb-8">
+          <div className="flex items-center gap-1 text-brand-cream mb-8">
             {[...Array(active.rating)].map((_, i) => (
-              <Star key={i} className="w-4 h-4 fill-current" />
+              <Star key={i} className="w-5 h-5 fill-current" />
             ))}
           </div>
 
           {/* Quote text */}
-          <blockquote className="font-display text-2xl sm:text-3xl md:text-4xl text-white font-medium leading-snug mb-10">
+          <blockquote className="font-display text-2xl sm:text-3xl md:text-4xl text-brand-cream font-medium leading-snug mb-10">
             &ldquo;{active.quote}&rdquo;
           </blockquote>
 
           {/* Author info */}
-          <div className="pt-6 border-t border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div className="pt-6 border-t border-brand-cream/10 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div>
-              <div className="font-display text-lg font-bold text-brand-orange">
+              <div className="font-display text-2xl font-bold text-white">
                 {active.author}
               </div>
-              <div className="text-xs font-mono text-brand-cream/60">
-                {active.position} — <span className="text-white">{active.company}</span>
+              <div className="text-xs sm:text-sm font-mono text-brand-cream-muted">
+                {active.position} — <span className="text-brand-cream font-semibold">{active.company}</span>
               </div>
             </div>
 
-            <div className="text-xs font-mono text-brand-cream/40">
+            <div className="text-xs font-mono text-brand-cream/40 font-bold">
               0{currentIdx + 1} / 0{testimonials.length}
             </div>
           </div>

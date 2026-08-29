@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { ArrowUpRight, CheckCircle2, TrendingUp, ShieldCheck, Bot, Globe } from "lucide-react";
+import { ArrowUpRight, CheckCircle2, ShieldCheck, Bot, Globe } from "lucide-react";
 import MagneticButton from "../ui/MagneticButton";
 
 const caseStudies = [
@@ -56,30 +56,30 @@ export default function CaseStudies() {
   const [selectedCase, setSelectedCase] = useState(0);
 
   return (
-    <section className="relative py-28 px-6 md:px-12 bg-brand-slate overflow-hidden border-t border-white/5">
+    <section id="cases" className="relative py-32 px-6 md:px-12 bg-brand-olive-deep overflow-hidden border-t border-brand-cream/10">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <span className="h-px w-10 bg-brand-orange" />
-              <span className="text-xs font-mono tracking-widest text-brand-orange uppercase">
+              <span className="h-0.5 w-12 bg-brand-cream" />
+              <span className="text-xs font-mono tracking-widest text-brand-cream uppercase font-bold">
                 // PROVEN IMPACT
               </span>
             </div>
-            <h2 className="font-display text-4xl sm:text-5xl md:text-6xl font-black uppercase text-white tracking-tight">
+            <h2 className="font-display text-5xl sm:text-7xl md:text-8xl font-bold uppercase text-brand-cream tracking-tight leading-[0.88]">
               FEATURED CASE <br />
-              <span className="text-brand-orange">STUDIES.</span>
+              <span className="text-brand-olive-light">STUDIES.</span>
             </h2>
           </div>
-          <p className="text-brand-cream/70 max-w-md text-sm md:text-base font-light">
+          <p className="text-brand-cream-muted max-w-md text-base sm:text-lg font-light leading-relaxed">
             Real enterprise transformations engineered with cutting-edge software, bespoke AI pipelines,
             and hardened cybersecurity postures.
           </p>
         </div>
 
         {/* Project Selector Tabs */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-8">
           {caseStudies.map((cs, idx) => {
             const Icon = cs.icon;
             const isSelected = selectedCase === idx;
@@ -87,26 +87,26 @@ export default function CaseStudies() {
               <button
                 key={cs.id}
                 onClick={() => setSelectedCase(idx)}
-                className={`p-6 rounded-sm border text-left transition-all duration-300 ${
+                className={`p-7 rounded-2xl border text-left transition-all duration-300 cursor-pointer ${
                   isSelected
-                    ? "bg-brand-dark border-brand-orange shadow-xl shadow-brand-orange/10"
-                    : "bg-brand-dark/40 border-white/10 hover:border-white/25"
+                    ? "bg-brand-olive-surface border-brand-cream shadow-2xl shadow-black/50"
+                    : "bg-brand-olive-surface/30 border-brand-cream/15 hover:border-brand-cream/35"
                 }`}
               >
-                <div className="flex items-center justify-between mb-3">
-                  <span className="text-[10px] font-mono uppercase tracking-widest text-brand-orange">
+                <div className="flex items-center justify-between mb-4">
+                  <span className="text-[10px] font-mono uppercase tracking-widest text-brand-olive-light font-bold">
                     {cs.category}
                   </span>
                   <Icon
                     className={`w-4 h-4 ${
-                      isSelected ? "text-brand-orange" : "text-brand-cream/40"
+                      isSelected ? "text-brand-cream" : "text-brand-cream/40"
                     }`}
                   />
                 </div>
-                <h3 className="font-display text-lg font-bold text-white mb-1">
+                <h3 className="font-display text-2xl font-bold text-brand-cream mb-1">
                   {cs.client}
                 </h3>
-                <p className="text-xs text-brand-cream/60 truncate font-mono">
+                <p className="text-xs text-brand-cream-muted truncate font-mono">
                   {cs.tagline}
                 </p>
               </button>
@@ -118,40 +118,37 @@ export default function CaseStudies() {
         {(() => {
           const current = caseStudies[selectedCase];
           return (
-            <div className="rounded-sm bg-brand-dark/95 border border-white/10 p-8 md:p-12 relative overflow-hidden shadow-2xl">
-              {/* Background ambient gradient */}
-              <div className="absolute top-0 right-0 w-96 h-96 bg-brand-orange/5 rounded-full blur-3xl pointer-events-none" />
-
+            <div className="rounded-2xl bg-brand-olive-surface border border-brand-cream/20 p-8 md:p-14 relative overflow-hidden shadow-2xl">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative z-10">
                 <div className="lg:col-span-7">
-                  <div className="flex items-center gap-3 mb-3">
-                    <span className="text-xs font-mono text-brand-orange bg-brand-orange/10 px-3 py-1 rounded border border-brand-orange/30 uppercase">
+                  <div className="flex items-center gap-3 mb-4">
+                    <span className="text-xs font-mono text-brand-cream bg-brand-olive px-3 py-1 rounded-full border border-brand-cream/30 uppercase font-bold">
                       {current.category}
                     </span>
-                    <span className="text-xs font-mono text-brand-cream/50 uppercase">
+                    <span className="text-xs font-mono text-brand-cream-muted uppercase">
                       Client: {current.client}
                     </span>
                   </div>
 
-                  <h3 className="font-display text-3xl sm:text-4xl font-bold text-white mb-4">
+                  <h3 className="font-display text-4xl sm:text-5xl md:text-6xl font-bold text-brand-cream mb-4">
                     {current.title}
                   </h3>
 
-                  <p className="text-base text-brand-cream/80 font-light leading-relaxed mb-8">
+                  <p className="text-base text-brand-cream-muted font-light leading-relaxed mb-8">
                     {current.desc}
                   </p>
 
                   {/* Impact Results */}
                   <div className="space-y-3 mb-8">
-                    <h4 className="text-xs font-mono uppercase tracking-widest text-brand-cream/50">
+                    <h4 className="text-xs font-mono uppercase tracking-widest text-brand-cream-muted font-bold">
                       MEASURABLE OUTCOMES:
                     </h4>
                     {current.results.map((res, rIdx) => (
                       <div
                         key={rIdx}
-                        className="flex items-center gap-3 text-sm text-brand-cream/90 font-light"
+                        className="flex items-center gap-3 text-sm sm:text-base text-brand-cream font-light"
                       >
-                        <CheckCircle2 className="w-4 h-4 text-brand-orange shrink-0" />
+                        <CheckCircle2 className="w-4 h-4 text-brand-olive-light shrink-0" />
                         <span>{res}</span>
                       </div>
                     ))}
@@ -162,7 +159,7 @@ export default function CaseStudies() {
                     {current.tech.map((t) => (
                       <span
                         key={t}
-                        className="px-3 py-1 rounded bg-brand-surface border border-white/10 text-xs font-mono text-brand-orange"
+                        className="px-3.5 py-1.5 rounded-full bg-brand-olive-dark border border-brand-cream/15 text-xs font-mono text-brand-cream font-semibold"
                       >
                         {t}
                       </span>
@@ -171,21 +168,21 @@ export default function CaseStudies() {
                 </div>
 
                 {/* Right Callout Box */}
-                <div className="lg:col-span-5 rounded-sm bg-brand-surface/60 border border-white/10 p-8 flex flex-col justify-between gap-6">
+                <div className="lg:col-span-5 rounded-2xl bg-brand-olive-dark border border-brand-cream/20 p-8 flex flex-col justify-between gap-6 shadow-2xl">
                   <div>
-                    <div className="text-xs font-mono uppercase tracking-widest text-brand-orange mb-2">
+                    <div className="text-xs font-mono uppercase tracking-widest text-brand-olive-light mb-2 font-bold">
                       ARCHITECTURAL HIGHLIGHT
                     </div>
-                    <div className="font-display text-xl font-bold text-white mb-3">
+                    <div className="font-display text-2xl sm:text-3xl font-bold text-brand-cream mb-3">
                       Enterprise Reliability with High-Security SLA
                     </div>
-                    <p className="text-xs text-brand-cream/70 font-light leading-relaxed">
+                    <p className="text-xs sm:text-sm text-brand-cream-muted font-light leading-relaxed">
                       Custom tailored from foundation to deployment with full source code ownership,
                       automated continuous security scans, and dedicated engineering support.
                     </p>
                   </div>
 
-                  <MagneticButton variant="primary" href="#cta" className="w-full justify-center text-xs">
+                  <MagneticButton variant="primary" href="#cta" className="w-full justify-center text-xs rounded-full py-3.5">
                     <span>Discuss Similar Solution</span>
                     <ArrowUpRight className="w-4 h-4" />
                   </MagneticButton>

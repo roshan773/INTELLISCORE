@@ -11,7 +11,6 @@ import {
   Cpu,
   Rocket,
   ArrowUpRight,
-  ShieldCheck,
 } from "lucide-react";
 
 const industries = [
@@ -77,24 +76,24 @@ export default function Industries() {
   const [activeIndustry, setActiveIndustry] = useState(0);
 
   return (
-    <section id="industries" className="relative py-28 px-6 md:px-12 bg-brand-dark overflow-hidden border-t border-white/5">
+    <section id="industries" className="relative py-32 px-6 md:px-12 bg-brand-olive-dark overflow-hidden border-t border-brand-cream/10">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-16">
           <div className="flex items-center gap-3 mb-4">
-            <span className="h-px w-10 bg-brand-orange" />
-            <span className="text-xs font-mono tracking-widest text-brand-orange uppercase">
+            <span className="h-0.5 w-12 bg-brand-cream" />
+            <span className="text-xs font-mono tracking-widest text-brand-cream uppercase font-bold">
               // DOMAIN EXPERTISE
             </span>
           </div>
-          <h2 className="font-display text-4xl sm:text-5xl md:text-6xl font-black uppercase text-white tracking-tight">
+          <h2 className="font-display text-5xl sm:text-7xl md:text-8xl font-bold uppercase text-brand-cream tracking-tight leading-[0.88]">
             SECTOR-SPECIFIC <br />
-            <span className="text-brand-orange">DIGITAL EXCELLENCE.</span>
+            <span className="text-brand-olive-light">DIGITAL EXCELLENCE.</span>
           </h2>
         </div>
 
         {/* 8 Industries Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
           {industries.map((ind, idx) => {
             const Icon = ind.icon;
             const isHovered = activeIndustry === idx;
@@ -103,46 +102,46 @@ export default function Industries() {
               <div
                 key={ind.id}
                 onMouseEnter={() => setActiveIndustry(idx)}
-                className={`p-7 rounded-sm border transition-all duration-300 flex flex-col justify-between cursor-pointer group ${
+                className={`p-8 rounded-2xl border transition-all duration-300 flex flex-col justify-between cursor-pointer group ${
                   isHovered
-                    ? "bg-brand-surface border-brand-orange shadow-xl shadow-brand-orange/10 -translate-y-1"
-                    : "bg-brand-surface/30 border-white/10 hover:border-white/20"
+                    ? "bg-brand-olive-surface border-brand-cream shadow-2xl shadow-black/50 -translate-y-1.5"
+                    : "bg-brand-olive-surface/30 border-brand-cream/15 hover:border-brand-cream/35"
                 }`}
               >
                 <div>
                   <div className="flex items-center justify-between mb-6">
                     <div
-                      className={`w-11 h-11 rounded-sm flex items-center justify-center border transition-colors ${
+                      className={`w-12 h-12 rounded-full flex items-center justify-center transition-colors ${
                         isHovered
-                          ? "bg-brand-orange text-brand-dark border-brand-orange"
-                          : "bg-brand-dark border-white/10 text-brand-orange"
+                          ? "bg-brand-cream text-brand-olive-dark shadow-md"
+                          : "bg-brand-olive border border-brand-cream/20 text-brand-cream"
                       }`}
                     >
                       <Icon className="w-5 h-5" />
                     </div>
-                    <span className="text-[10px] font-mono text-brand-cream/40 uppercase">
+                    <span className="text-[10px] font-mono text-brand-cream/40 uppercase font-bold">
                       SEC_0{idx + 1}
                     </span>
                   </div>
 
                   <h3
-                    className={`font-display text-xl font-bold mb-3 transition-colors ${
-                      isHovered ? "text-brand-orange" : "text-white"
+                    className={`font-display text-2xl sm:text-3xl font-bold mb-3 transition-colors ${
+                      isHovered ? "text-brand-cream" : "text-brand-cream/85"
                     }`}
                   >
                     {ind.name}
                   </h3>
 
-                  <p className="text-xs text-brand-cream/70 font-light leading-relaxed mb-6">
+                  <p className="text-xs sm:text-sm text-brand-cream-muted font-light leading-relaxed mb-6">
                     {ind.desc}
                   </p>
                 </div>
 
-                <div className="pt-4 border-t border-white/5 flex items-center justify-between text-[11px] font-mono text-brand-cream/50">
+                <div className="pt-4 border-t border-brand-cream/10 flex items-center justify-between text-[11px] font-mono text-brand-cream/60">
                   <span className="truncate pr-2">{ind.solution}</span>
                   <ArrowUpRight
-                    className={`w-3.5 h-3.5 shrink-0 transition-transform ${
-                      isHovered ? "text-brand-orange translate-x-0.5 -translate-y-0.5" : "text-brand-cream/30"
+                    className={`w-4 h-4 shrink-0 transition-transform ${
+                      isHovered ? "text-brand-cream translate-x-0.5 -translate-y-0.5" : "text-brand-cream/30"
                     }`}
                   />
                 </div>

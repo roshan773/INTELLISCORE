@@ -4,7 +4,7 @@ import React, { useRef, useState } from "react";
 
 interface MagneticButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
-  variant?: "primary" | "secondary" | "outline" | "ghost";
+  variant?: "primary" | "secondary" | "olive" | "outline" | "ghost";
   className?: string;
   href?: string;
 }
@@ -33,17 +33,19 @@ export default function MagneticButton({
   };
 
   const baseStyles =
-    "relative inline-flex items-center justify-center font-medium transition-all duration-300 rounded-sm text-sm uppercase tracking-wider px-7 py-3.5 group overflow-hidden cursor-pointer";
+    "relative inline-flex items-center justify-center font-display tracking-wider font-semibold uppercase text-xs sm:text-sm px-7 py-3.5 rounded-sm transition-all duration-300 group overflow-hidden cursor-pointer";
 
   const variantStyles = {
     primary:
-      "bg-brand-orange text-brand-dark hover:bg-brand-orange-light font-semibold shadow-lg shadow-brand-orange/20 hover:shadow-brand-orange/40",
+      "bg-brand-cream text-brand-olive-dark hover:bg-white shadow-lg shadow-brand-cream/15 hover:shadow-brand-cream/30",
+    olive:
+      "bg-brand-olive text-brand-cream hover:bg-brand-olive-light shadow-lg shadow-brand-olive/30",
     secondary:
-      "bg-brand-light-slate/60 text-brand-cream border border-white/10 hover:border-brand-orange/50 hover:bg-brand-light-slate/90 backdrop-blur-sm",
+      "bg-brand-surface text-brand-cream border border-brand-cream/15 hover:border-brand-cream/50 hover:bg-brand-surface-card backdrop-blur-sm",
     outline:
-      "border border-brand-orange/40 text-brand-orange hover:bg-brand-orange hover:text-brand-dark",
+      "border border-brand-cream/40 text-brand-cream hover:bg-brand-cream hover:text-brand-olive-dark",
     ghost:
-      "text-brand-cream/80 hover:text-brand-orange bg-transparent hover:bg-white/5",
+      "text-brand-cream/80 hover:text-brand-cream bg-transparent hover:bg-white/5",
   };
 
   const content = (

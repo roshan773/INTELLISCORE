@@ -78,27 +78,26 @@ export default function Process() {
   return (
     <section
       id="process"
-      className="relative py-28 px-6 md:px-12 bg-brand-slate overflow-hidden border-t border-white/5"
+      className="relative py-32 px-6 md:px-12 bg-brand-olive-deep overflow-hidden border-t border-brand-cream/10"
     >
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="mb-16">
           <div className="flex items-center gap-3 mb-4">
-            <span className="h-px w-10 bg-brand-orange" />
-            <span className="text-xs font-mono tracking-widest text-brand-orange uppercase">
+            <span className="h-0.5 w-12 bg-brand-cream" />
+            <span className="text-xs font-mono tracking-widest text-brand-cream uppercase font-bold">
               // EXECUTION FRAMEWORK
             </span>
           </div>
-          <h2 className="font-display text-4xl sm:text-5xl md:text-6xl font-black uppercase text-white tracking-tight">
+          <h2 className="font-display text-5xl sm:text-7xl md:text-8xl font-bold uppercase text-brand-cream tracking-tight leading-[0.88]">
             THE INTELLISCORE <br />
-            <span className="text-brand-orange">ENGINEERING JOURNEY.</span>
+            <span className="text-brand-olive-light">ENGINEERING JOURNEY.</span>
           </h2>
         </div>
 
         {/* Timeline Nav Bar */}
         <div className="relative mb-12 overflow-x-auto pb-4 scrollbar-none">
-          {/* Connecting line */}
-          <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-white/10 -translate-y-1/2 hidden md:block" />
+          <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-brand-cream/15 -translate-y-1/2 hidden md:block" />
 
           <div className="flex items-center justify-between min-w-[750px] relative z-10">
             {steps.map((item, index) => {
@@ -110,15 +109,15 @@ export default function Process() {
                 <button
                   key={item.step}
                   onClick={() => setActiveStep(index)}
-                  className="flex flex-col items-center group focus:outline-none"
+                  className="flex flex-col items-center group focus:outline-none cursor-pointer"
                 >
                   <div
-                    className={`w-12 h-12 rounded-sm border flex items-center justify-center transition-all duration-300 ${
+                    className={`w-14 h-14 rounded-full border flex items-center justify-center transition-all duration-300 ${
                       isCurrent
-                        ? "bg-brand-orange border-brand-orange text-brand-dark shadow-lg shadow-brand-orange/40 scale-110"
+                        ? "bg-brand-cream border-brand-cream text-brand-olive-dark shadow-xl shadow-brand-cream/30 scale-110"
                         : isPast
-                        ? "bg-brand-light-slate/80 border-brand-orange/50 text-brand-orange"
-                        : "bg-brand-dark border-white/15 text-brand-cream/50 group-hover:border-white/40"
+                        ? "bg-brand-olive-surface border-brand-cream/40 text-brand-cream"
+                        : "bg-brand-olive-dark border-brand-cream/20 text-brand-cream/50 group-hover:border-brand-cream/50"
                     }`}
                   >
                     <Icon className="w-5 h-5" />
@@ -126,9 +125,9 @@ export default function Process() {
                   <span
                     className={`text-[11px] font-mono uppercase tracking-widest mt-3 transition-colors ${
                       isCurrent
-                        ? "text-brand-orange font-bold"
+                        ? "text-brand-cream font-bold"
                         : isPast
-                        ? "text-brand-cream/80"
+                        ? "text-brand-cream-muted"
                         : "text-brand-cream/40"
                     }`}
                   >
@@ -141,38 +140,37 @@ export default function Process() {
         </div>
 
         {/* Active Stage Detailed Panel */}
-        <div className="rounded-sm bg-brand-dark/90 border border-white/10 p-8 md:p-12 relative overflow-hidden transition-all duration-500 shadow-2xl">
-          {/* Subtle background stage watermark number */}
-          <div className="absolute right-6 -bottom-10 font-display text-9xl font-black text-white/5 pointer-events-none select-none">
+        <div className="rounded-2xl bg-brand-olive-surface border border-brand-cream/20 p-8 md:p-14 relative overflow-hidden transition-all duration-500 shadow-2xl">
+          <div className="absolute right-6 -bottom-10 font-display text-9xl font-black text-brand-cream/5 pointer-events-none select-none">
             {steps[activeStep].step}
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
             <div className="lg:col-span-7">
               <div className="flex items-center gap-3 mb-4">
-                <span className="text-xs font-mono text-brand-orange bg-brand-orange/10 px-3 py-1 rounded border border-brand-orange/30 uppercase">
+                <span className="text-xs font-mono text-brand-cream bg-brand-olive px-3 py-1 rounded-full border border-brand-cream/30 uppercase font-bold">
                   Stage {steps[activeStep].step} of 07 // {steps[activeStep].name}
                 </span>
               </div>
-              <h3 className="font-display text-3xl sm:text-4xl font-bold text-white mb-4">
+              <h3 className="font-display text-4xl sm:text-5xl md:text-6xl font-bold text-brand-cream mb-4">
                 {steps[activeStep].title}
               </h3>
-              <p className="text-base text-brand-cream/80 font-light leading-relaxed mb-8">
+              <p className="text-base text-brand-cream-muted font-light leading-relaxed mb-8">
                 {steps[activeStep].desc}
               </p>
 
               {/* Deliverables */}
               <div>
-                <h4 className="text-xs font-mono uppercase tracking-widest text-brand-cream/60 mb-3">
+                <h4 className="text-xs font-mono uppercase tracking-widest text-brand-cream-muted mb-3 font-bold">
                   Key Deliverables:
                 </h4>
-                <div className="flex flex-wrap gap-3">
+                <div className="flex flex-wrap gap-2.5">
                   {steps[activeStep].deliverables.map((item, dIdx) => (
                     <div
                       key={dIdx}
-                      className="flex items-center gap-2 px-3.5 py-2 rounded-sm bg-brand-surface/80 border border-white/10 text-xs font-mono text-brand-cream/90"
+                      className="flex items-center gap-2 px-4 py-2 rounded-full bg-brand-olive-dark border border-brand-cream/20 text-xs font-mono text-brand-cream font-medium"
                     >
-                      <CheckCircle className="w-4 h-4 text-brand-orange" />
+                      <CheckCircle className="w-4 h-4 text-brand-olive-light" />
                       <span>{item}</span>
                     </div>
                   ))}
@@ -186,7 +184,7 @@ export default function Process() {
                 <button
                   onClick={() => setActiveStep((prev) => Math.max(0, prev - 1))}
                   disabled={activeStep === 0}
-                  className="px-5 py-2.5 rounded-sm border border-white/10 text-xs font-mono uppercase tracking-wider text-brand-cream/70 hover:text-white hover:border-white/30 disabled:opacity-30 disabled:cursor-not-allowed transition-all"
+                  className="px-6 py-3 rounded-full border border-brand-cream/20 text-xs font-mono uppercase tracking-wider text-brand-cream/80 hover:text-white hover:border-brand-cream disabled:opacity-30 disabled:cursor-not-allowed transition-all cursor-pointer"
                 >
                   ← Previous Stage
                 </button>
@@ -195,13 +193,13 @@ export default function Process() {
                     setActiveStep((prev) => Math.min(steps.length - 1, prev + 1))
                   }
                   disabled={activeStep === steps.length - 1}
-                  className="px-5 py-2.5 rounded-sm bg-brand-orange text-brand-dark font-semibold text-xs font-mono uppercase tracking-wider hover:bg-brand-orange-light disabled:opacity-30 disabled:cursor-not-allowed transition-all flex items-center gap-2"
+                  className="px-6 py-3 rounded-full bg-brand-cream text-brand-olive-dark font-semibold text-xs font-mono uppercase tracking-wider hover:bg-white disabled:opacity-30 disabled:cursor-not-allowed transition-all flex items-center gap-2 cursor-pointer shadow-lg shadow-brand-cream/20"
                 >
                   <span>Next Stage</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </button>
               </div>
-              <span className="text-[11px] font-mono text-brand-cream/40">
+              <span className="text-[11px] font-mono text-brand-cream/50">
                 Click any step above to explore that phase
               </span>
             </div>

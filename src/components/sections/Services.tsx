@@ -7,7 +7,7 @@ import MagneticButton from "../ui/MagneticButton";
 const services = [
   {
     num: "01",
-    title: "Web Development",
+    title: "Web Architecture",
     tagline: "High-Performance Modern Web Platforms",
     icon: Globe,
     description:
@@ -73,30 +73,30 @@ export default function Services() {
   return (
     <section
       id="services"
-      className="relative py-28 px-6 md:px-12 bg-brand-dark overflow-hidden border-t border-white/5"
+      className="relative py-32 px-6 md:px-12 bg-brand-olive-dark overflow-hidden border-t border-brand-cream/10"
     >
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <span className="h-px w-10 bg-brand-orange" />
-              <span className="text-xs font-mono tracking-widest text-brand-orange uppercase">
-                // Core Capabilities
+              <span className="h-0.5 w-12 bg-brand-cream" />
+              <span className="text-xs font-mono tracking-widest text-brand-cream uppercase font-bold">
+                // CORE CAPABILITIES
               </span>
             </div>
-            <h2 className="font-display text-4xl sm:text-5xl md:text-6xl font-black uppercase text-white tracking-tight">
+            <h2 className="font-display text-5xl sm:text-7xl md:text-8xl font-bold uppercase text-brand-cream tracking-tight leading-[0.88]">
               SERVICES ENGINEERED <br />
-              <span className="text-brand-orange">FOR DOMINANCE.</span>
+              <span className="text-brand-olive-light">FOR DOMINANCE.</span>
             </h2>
           </div>
-          <p className="text-brand-cream/70 max-w-md text-sm md:text-base font-light">
+          <p className="text-brand-cream-muted max-w-md text-base sm:text-lg font-light leading-relaxed">
             Comprehensive digital capabilities designed to accelerate growth, modernize infrastructure,
             and ensure total operational security.
           </p>
         </div>
 
-        {/* Interactive Stacked Service Panels */}
+        {/* Stacked Service Panels */}
         <div className="flex flex-col gap-6">
           {services.map((service, index) => {
             const Icon = service.icon;
@@ -107,57 +107,50 @@ export default function Services() {
                 key={service.num}
                 onMouseEnter={() => setActiveService(index)}
                 onClick={() => setActiveService(index)}
-                className={`relative rounded-sm transition-all duration-500 cursor-pointer overflow-hidden border ${
+                className={`relative rounded-2xl transition-all duration-500 cursor-pointer overflow-hidden border ${
                   isActive
-                    ? "bg-brand-surface/90 border-brand-orange shadow-2xl shadow-brand-orange/10 p-8 md:p-10"
-                    : "bg-brand-surface/40 border-white/10 hover:border-white/20 p-6 md:p-8"
+                    ? "bg-brand-olive-surface border-brand-cream shadow-2xl shadow-black/60 p-8 md:p-12"
+                    : "bg-brand-olive-surface/30 border-brand-cream/15 hover:border-brand-cream/40 p-6 md:p-8"
                 }`}
               >
-                {/* Active Left Indicator Bar */}
-                <div
-                  className={`absolute top-0 left-0 bottom-0 w-1.5 bg-brand-orange transition-opacity duration-300 ${
-                    isActive ? "opacity-100" : "opacity-0"
-                  }`}
-                />
-
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
-                  {/* Service Number & Header */}
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                  {/* Left Column: Number & Title */}
                   <div className="lg:col-span-5 flex items-start gap-6">
                     <span
-                      className={`font-display text-3xl md:text-5xl font-extrabold transition-all duration-300 ${
-                        isActive ? "text-brand-orange scale-105" : "text-brand-cream/30"
+                      className={`font-display text-5xl md:text-7xl font-black transition-all duration-300 ${
+                        isActive ? "text-brand-cream" : "text-brand-cream/25"
                       }`}
                     >
                       {service.num}
                     </span>
                     <div>
-                      <div className="flex items-center gap-3 mb-1">
+                      <div className="flex items-center gap-3 mb-1.5">
                         <Icon
-                          className={`w-5 h-5 transition-colors ${
-                            isActive ? "text-brand-orange" : "text-brand-cream/50"
+                          className={`w-5 h-5 ${
+                            isActive ? "text-brand-olive-light" : "text-brand-cream/50"
                           }`}
                         />
-                        <span className="text-xs font-mono tracking-wider text-brand-orange uppercase">
+                        <span className="text-xs font-mono tracking-wider text-brand-olive-light uppercase font-bold">
                           {service.tagline}
                         </span>
                       </div>
-                      <h3 className="font-display text-2xl md:text-3xl font-bold text-white tracking-tight">
+                      <h3 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-brand-cream tracking-tight">
                         {service.title}
                       </h3>
                     </div>
                   </div>
 
-                  {/* Service Description and Capabilities (Expands on Desktop/Mobile) */}
+                  {/* Middle Column: Description & Capabilities */}
                   <div className="lg:col-span-6">
-                    <p className="text-sm md:text-base text-brand-cream/80 font-light leading-relaxed mb-4">
+                    <p className="text-sm sm:text-base text-brand-cream-muted font-light leading-relaxed mb-4">
                       {service.description}
                     </p>
 
                     {isActive && (
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-4 border-t border-white/10 animate-fadeIn">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-6 border-t border-brand-cream/15 animate-fadeIn">
                         {service.capabilities.map((cap, i) => (
-                          <div key={i} className="flex items-center gap-2 text-xs font-mono text-brand-cream/90">
-                            <CheckCircle2 className="w-3.5 h-3.5 text-brand-orange shrink-0" />
+                          <div key={i} className="flex items-center gap-2.5 text-xs font-mono text-brand-cream">
+                            <CheckCircle2 className="w-4 h-4 text-brand-olive-light shrink-0" />
                             <span>{cap}</span>
                           </div>
                         ))}
@@ -165,30 +158,30 @@ export default function Services() {
                     )}
                   </div>
 
-                  {/* Action Arrow */}
+                  {/* Right Column: Arrow Button */}
                   <div className="lg:col-span-1 flex justify-end">
                     <div
-                      className={`w-12 h-12 rounded-sm border flex items-center justify-center transition-all duration-300 ${
+                      className={`w-14 h-14 rounded-full border flex items-center justify-center transition-all duration-300 ${
                         isActive
-                          ? "bg-brand-orange border-brand-orange text-brand-dark rotate-45 scale-110"
-                          : "border-white/10 text-white/40"
+                          ? "bg-brand-cream border-brand-cream text-brand-olive-dark rotate-45 scale-110 shadow-lg shadow-brand-cream/20"
+                          : "border-brand-cream/20 text-brand-cream/40"
                       }`}
                     >
-                      <ArrowUpRight className="w-5 h-5 transition-transform" />
+                      <ArrowUpRight className="w-6 h-6" />
                     </div>
                   </div>
                 </div>
 
                 {/* Tech Badges Footer on Active */}
                 {isActive && (
-                  <div className="mt-6 pt-4 border-t border-white/10 flex flex-wrap items-center gap-2">
-                    <span className="text-[10px] font-mono tracking-widest text-brand-cream/40 uppercase mr-2">
+                  <div className="mt-8 pt-6 border-t border-brand-cream/15 flex flex-wrap items-center gap-2.5">
+                    <span className="text-[10px] font-mono tracking-widest text-brand-cream-muted uppercase mr-2 font-bold">
                       TECH STACK //
                     </span>
                     {service.tech.map((t) => (
                       <span
                         key={t}
-                        className="px-2.5 py-1 rounded bg-brand-dark/70 border border-white/10 text-[11px] font-mono text-brand-orange"
+                        className="px-3.5 py-1 rounded-full bg-brand-olive-dark border border-brand-cream/20 text-xs font-mono text-brand-cream font-medium"
                       >
                         {t}
                       </span>
@@ -200,17 +193,17 @@ export default function Services() {
           })}
         </div>
 
-        {/* Bottom CTA bar */}
-        <div className="mt-16 p-8 rounded-sm bg-brand-slate/60 border border-white/10 flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="text-center md:text-left">
-            <h4 className="font-display text-xl font-bold text-white mb-1">
+        {/* Bottom Bar */}
+        <div className="mt-16 p-8 rounded-2xl bg-brand-olive-surface border border-brand-cream/20 flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
+          <div>
+            <h4 className="font-display text-2xl sm:text-3xl font-bold text-brand-cream mb-1">
               Need a custom engineering solution?
             </h4>
-            <p className="text-sm text-brand-cream/70">
+            <p className="text-sm text-brand-cream-muted">
               We consult directly with technical leaders to architect tailored digital ecosystems.
             </p>
           </div>
-          <MagneticButton variant="primary" href="#cta">
+          <MagneticButton variant="primary" href="#cta" className="rounded-full px-8 py-3.5 text-xs">
             <span>Schedule Discovery Call</span>
             <ArrowUpRight className="w-4 h-4" />
           </MagneticButton>

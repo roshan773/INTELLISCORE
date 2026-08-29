@@ -1,21 +1,28 @@
-import type { Metadata } from "next";
-import { Manrope, Syne } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { Plus_Jakarta_Sans, Oswald } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/components/layout/SmoothScroll";
 
-const manrope = Manrope({
-  variable: "--font-manrope",
+const plusJakarta = Plus_Jakarta_Sans({
+  variable: "--font-body-custom",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
   display: "swap",
 });
 
-const syne = Syne({
-  variable: "--font-syne",
+const oswald = Oswald({
+  variable: "--font-display-custom",
   subsets: ["latin"],
-  weight: ["500", "600", "700", "800"],
+  weight: ["500", "600", "700"],
   display: "swap",
 });
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: "#556B2F",
+};
 
 export const metadata: Metadata = {
   title: "INTELLISCORE — BUILD. AUTOMATE. SECURE.",
@@ -28,11 +35,8 @@ export const metadata: Metadata = {
     "Cybersecurity",
     "Custom Software Engineering",
     "Digital Transformation",
-    "Technology Consulting",
   ],
   authors: [{ name: "INTELLISCORE" }],
-  viewport: "width=device-width, initial-scale=1, maximum-scale=5",
-  themeColor: "#283845",
   icons: {
     icon: "/favicon.ico",
   },
@@ -44,8 +48,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${manrope.variable} ${syne.variable} scroll-smooth`}>
-      <body className="bg-brand-slate text-brand-cream font-body selection:bg-brand-orange selection:text-brand-dark antialiased">
+    <html lang="en" className={`${plusJakarta.variable} ${oswald.variable} scroll-smooth`}>
+      <body className="bg-brand-olive-dark text-brand-cream font-body selection:bg-brand-cream selection:text-brand-olive-dark antialiased">
         <SmoothScroll>{children}</SmoothScroll>
       </body>
     </html>

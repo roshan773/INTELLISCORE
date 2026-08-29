@@ -21,7 +21,6 @@ const techNodes = [
     short: "AI",
     tools: ["OpenAI", "Claude 3.7", "LangChain", "Llama 3", "PyTorch"],
     desc: "Autonomous LLM agents, vector embeddings, and predictive intelligence models.",
-    angle: 0, // top
   },
   {
     id: "cybersecurity",
@@ -30,7 +29,6 @@ const techNodes = [
     short: "Security",
     tools: ["Zero-Trust", "Cloudflare WAF", "CrowdStrike", "Vault", "OWASP"],
     desc: "Penetration defense, secret management, active threat monitoring, and zero-trust policies.",
-    angle: 45, // top right
   },
   {
     id: "cloud",
@@ -39,7 +37,6 @@ const techNodes = [
     short: "Cloud",
     tools: ["AWS", "Google Cloud", "Kubernetes", "Docker", "Terraform"],
     desc: "Resilient serverless and containerized multi-region cloud infrastructure.",
-    angle: 90, // right
   },
   {
     id: "web",
@@ -48,7 +45,6 @@ const techNodes = [
     short: "Web",
     tools: ["Next.js", "React 19", "TypeScript", "Tailwind CSS", "GSAP"],
     desc: "Ultra-fast headless web platforms engineered with zero-latency edge delivery.",
-    angle: 135, // bottom right
   },
   {
     id: "data",
@@ -57,7 +53,6 @@ const techNodes = [
     short: "Data",
     tools: ["PostgreSQL", "ClickHouse", "Redis", "Pinecone", "Kafka"],
     desc: "High-throughput real-time telemetry streaming and vector database pipelines.",
-    angle: 180, // bottom
   },
   {
     id: "automation",
@@ -66,7 +61,6 @@ const techNodes = [
     short: "Automation",
     tools: ["Temporal", "FastAPI", "Celery", "Webhooks", "Zapier/n8n"],
     desc: "Automated event-driven worker queues and frictionless system integrations.",
-    angle: 225, // bottom left
   },
   {
     id: "apis",
@@ -75,7 +69,6 @@ const techNodes = [
     short: "APIs",
     tools: ["GraphQL", "REST / OpenAPI", "gRPC", "tRPC", "WebSockets"],
     desc: "Type-safe microservices communication layers and unified enterprise endpoints.",
-    angle: 270, // left
   },
   {
     id: "infra",
@@ -84,7 +77,6 @@ const techNodes = [
     short: "Infra",
     tools: ["Vercel Edge", "Linux Kernel", "Nginx", "Grafana", "Prometheus"],
     desc: "Observability, auto-scaling compute, and sub-millisecond network topologies.",
-    angle: 315, // top left
   },
 ];
 
@@ -92,19 +84,19 @@ export default function Technology() {
   const [selectedNode, setSelectedNode] = useState(techNodes[0]);
 
   return (
-    <section className="relative py-28 px-6 md:px-12 bg-brand-dark overflow-hidden border-t border-white/5">
+    <section id="technology" className="relative py-32 px-6 md:px-12 bg-brand-olive-dark overflow-hidden border-t border-brand-cream/10">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-3 px-3.5 py-1.5 rounded-sm bg-brand-light-slate/50 border border-brand-orange/30 text-brand-orange text-xs font-mono tracking-widest uppercase mb-6">
-            <span className="w-1.5 h-1.5 rounded-full bg-brand-orange animate-pulse" />
+          <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-brand-olive-surface border border-brand-cream/20 text-brand-cream text-xs font-mono tracking-widest uppercase mb-6">
+            <span className="w-1.5 h-1.5 rounded-full bg-brand-cream animate-pulse" />
             <span>// TECH STACK ECOSYSTEM</span>
           </div>
 
-          <h2 className="font-display text-4xl sm:text-5xl md:text-6xl font-black uppercase text-white tracking-tight leading-[0.95] mb-6">
-            CONNECTED <span className="text-brand-orange">ECOSYSTEM.</span>
+          <h2 className="font-display text-5xl sm:text-7xl md:text-8xl font-bold uppercase text-brand-cream tracking-tight leading-[0.88] mb-6">
+            CONNECTED <span className="text-brand-olive-light">ECOSYSTEM.</span>
           </h2>
-          <p className="text-brand-cream/70 text-sm sm:text-base font-light">
+          <p className="text-brand-cream-muted text-base sm:text-lg font-light">
             An interconnected network of modern frameworks, AI infrastructure, and cybersecurity defenses
             orchestrated around the INTELLISCORE core engine.
           </p>
@@ -112,7 +104,7 @@ export default function Technology() {
 
         {/* Central Hub and Radial Grid Network */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-          {/* Left/Main interactive category buttons */}
+          {/* Left interactive category buttons */}
           <div className="lg:col-span-7 grid grid-cols-2 sm:grid-cols-4 gap-3.5">
             {techNodes.map((node) => {
               const Icon = node.icon;
@@ -121,29 +113,29 @@ export default function Technology() {
                 <button
                   key={node.id}
                   onClick={() => setSelectedNode(node)}
-                  className={`p-4 rounded-sm border text-left transition-all duration-300 flex flex-col justify-between min-h-[110px] group ${
+                  className={`p-5 rounded-2xl border text-left transition-all duration-300 flex flex-col justify-between min-h-[120px] group cursor-pointer ${
                     isSelected
-                      ? "bg-brand-surface border-brand-orange shadow-lg shadow-brand-orange/20 translate-y-[-2px]"
-                      : "bg-brand-surface/40 border-white/10 hover:border-white/30 hover:bg-brand-surface/60"
+                      ? "bg-brand-olive-surface border-brand-cream shadow-xl shadow-brand-cream/15 translate-y-[-3px]"
+                      : "bg-brand-olive-surface/30 border-brand-cream/15 hover:border-brand-cream/40 hover:bg-brand-olive-surface/60"
                   }`}
                 >
                   <div className="flex items-center justify-between">
                     <Icon
                       className={`w-5 h-5 transition-colors ${
-                        isSelected ? "text-brand-orange" : "text-brand-cream/50 group-hover:text-brand-orange"
+                        isSelected ? "text-brand-cream" : "text-brand-cream/50 group-hover:text-brand-cream"
                       }`}
                     />
                     <span
-                      className={`w-1.5 h-1.5 rounded-full ${
-                        isSelected ? "bg-brand-orange shadow-[0_0_8px_#FFA649]" : "bg-white/10"
+                      className={`w-2 h-2 rounded-full ${
+                        isSelected ? "bg-brand-cream shadow-[0_0_8px_#FFFDD0]" : "bg-brand-cream/10"
                       }`}
                     />
                   </div>
                   <div>
-                    <span className="font-display text-sm font-bold text-white block">
+                    <span className="font-display text-lg font-bold text-brand-cream block">
                       {node.short}
                     </span>
-                    <span className="text-[10px] font-mono text-brand-cream/50 block truncate">
+                    <span className="text-[11px] font-mono text-brand-cream-muted block truncate">
                       {node.name}
                     </span>
                   </div>
@@ -153,39 +145,39 @@ export default function Technology() {
           </div>
 
           {/* Right Selected Node Detail Card */}
-          <div className="lg:col-span-5 rounded-sm bg-brand-surface/80 border border-brand-orange/40 p-8 shadow-2xl relative overflow-hidden">
+          <div className="lg:col-span-5 rounded-2xl bg-brand-olive-surface border border-brand-cream/30 p-8 md:p-10 shadow-2xl relative overflow-hidden">
             <div className="absolute top-0 right-0 p-4 opacity-10">
-              <Sparkles className="w-24 h-24 text-brand-orange" />
+              <Sparkles className="w-28 h-28 text-brand-cream" />
             </div>
 
             <div className="relative z-10">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 rounded-sm bg-brand-dark/90 border border-brand-orange/50 flex items-center justify-center text-brand-orange">
-                  {React.createElement(selectedNode.icon, { className: "w-5 h-5" })}
+              <div className="flex items-center gap-3.5 mb-6">
+                <div className="w-12 h-12 rounded-full bg-brand-cream text-brand-olive-dark flex items-center justify-center shadow-lg">
+                  {React.createElement(selectedNode.icon, { className: "w-6 h-6" })}
                 </div>
                 <div>
-                  <span className="text-[10px] font-mono text-brand-orange uppercase tracking-wider block">
+                  <span className="text-[10px] font-mono text-brand-olive-light uppercase tracking-wider block font-bold">
                     CATEGORY // SELECTED
                   </span>
-                  <h3 className="font-display text-2xl font-bold text-white">
+                  <h3 className="font-display text-3xl sm:text-4xl font-bold text-brand-cream">
                     {selectedNode.name}
                   </h3>
                 </div>
               </div>
 
-              <p className="text-sm text-brand-cream/80 font-light leading-relaxed mb-6">
+              <p className="text-sm sm:text-base text-brand-cream-muted font-light leading-relaxed mb-8">
                 {selectedNode.desc}
               </p>
 
-              <div className="border-t border-white/10 pt-5">
-                <div className="text-xs font-mono uppercase tracking-widest text-brand-cream/50 mb-3">
+              <div className="border-t border-brand-cream/15 pt-6">
+                <div className="text-xs font-mono uppercase tracking-widest text-brand-cream-muted mb-3 font-bold">
                   PRIMARY TOOLS & TECHNOLOGIES:
                 </div>
                 <div className="flex flex-wrap gap-2">
                   {selectedNode.tools.map((tool) => (
                     <span
                       key={tool}
-                      className="px-3 py-1 rounded bg-brand-dark/90 border border-white/10 text-xs font-mono text-brand-orange font-medium"
+                      className="px-3.5 py-1.5 rounded-full bg-brand-olive-dark border border-brand-cream/15 text-xs font-mono text-brand-cream font-semibold"
                     >
                       {tool}
                     </span>
@@ -194,9 +186,11 @@ export default function Technology() {
               </div>
 
               {/* Central Core Connection Label */}
-              <div className="mt-8 pt-4 border-t border-white/10 flex items-center justify-between text-[11px] font-mono text-brand-cream/50">
+              <div className="mt-8 pt-6 border-t border-brand-cream/15 flex items-center justify-between text-xs font-mono text-brand-cream-muted">
                 <span>ORCHESTRATED BY:</span>
-                <span className="text-brand-orange font-bold font-display">INTELLISCORE CORE</span>
+                <span className="text-brand-cream font-bold font-display text-base tracking-wider">
+                  INTELLISCORE CORE
+                </span>
               </div>
             </div>
           </div>

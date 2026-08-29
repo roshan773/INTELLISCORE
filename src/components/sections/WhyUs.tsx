@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Sparkles, Terminal, CheckCheck, ShieldCheck, Zap, Activity } from "lucide-react";
+import { Activity, CheckCheck } from "lucide-react";
 
 const principles = [
   {
@@ -32,21 +32,21 @@ const principles = [
 
 export default function WhyUs() {
   return (
-    <section className="relative py-28 px-6 md:px-12 bg-brand-dark overflow-hidden border-t border-white/5">
+    <section id="philosophy" className="relative py-32 px-6 md:px-12 bg-brand-olive-dark overflow-hidden border-t border-brand-cream/10">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="mb-20 text-center max-w-4xl mx-auto">
-          <div className="inline-flex items-center gap-3 px-3.5 py-1.5 rounded-sm bg-brand-light-slate/50 border border-brand-orange/30 text-brand-orange text-xs font-mono tracking-widest uppercase mb-6">
-            <span className="w-1.5 h-1.5 rounded-full bg-brand-orange animate-pulse" />
+          <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-brand-olive-surface border border-brand-cream/20 text-brand-cream text-xs font-mono tracking-widest uppercase mb-6">
+            <span className="w-1.5 h-1.5 rounded-full bg-brand-cream animate-pulse" />
             <span>// THE INTELLISCORE PHILOSOPHY</span>
           </div>
 
-          <h2 className="font-display text-4xl sm:text-6xl md:text-7xl font-black uppercase text-white tracking-tight leading-[0.95] mb-6">
+          <h2 className="font-display text-5xl sm:text-7xl md:text-8xl font-bold uppercase text-brand-cream tracking-tight leading-[0.88] mb-6">
             WE DON&apos;T JUST BUILD TECHNOLOGY. <br />
-            <span className="text-brand-orange">WE BUILD ADVANTAGE.</span>
+            <span className="text-brand-olive-light">WE BUILD ADVANTAGE.</span>
           </h2>
 
-          <p className="text-brand-cream/70 text-base sm:text-lg font-light leading-relaxed">
+          <p className="text-brand-cream-muted text-base sm:text-lg font-light leading-relaxed">
             In an era of generic code and off-the-shelf templates, INTELLISCORE engineers customized
             digital supremacy designed to outperform competitors in speed, intelligence, and resilience.
           </p>
@@ -59,28 +59,28 @@ export default function WhyUs() {
             {principles.map((item) => (
               <div
                 key={item.num}
-                className="p-8 rounded-sm bg-brand-surface/70 border border-white/10 hover:border-brand-orange/50 transition-all duration-300 flex flex-col justify-between group"
+                className="p-8 rounded-2xl bg-brand-olive-surface border border-brand-cream/15 hover:border-brand-cream/60 transition-all duration-300 flex flex-col justify-between group shadow-xl"
               >
                 <div>
                   <div className="flex items-center justify-between mb-6">
-                    <span className="font-display text-3xl font-extrabold text-brand-orange">
+                    <span className="font-display text-5xl font-extrabold text-brand-cream">
                       {item.num}
                     </span>
-                    <span className="text-[10px] font-mono tracking-widest text-brand-cream/40 uppercase">
+                    <span className="text-[10px] font-mono tracking-widest text-brand-cream/40 uppercase font-bold">
                       PRINCIPLE
                     </span>
                   </div>
 
-                  <h3 className="font-display text-xl font-bold text-white mb-3 group-hover:text-brand-orange transition-colors">
+                  <h3 className="font-display text-3xl font-bold text-brand-cream mb-3 group-hover:text-white transition-colors">
                     {item.title}
                   </h3>
 
-                  <p className="text-sm text-brand-cream/70 font-light leading-relaxed">
+                  <p className="text-sm text-brand-cream-muted font-light leading-relaxed">
                     {item.desc}
                   </p>
                 </div>
 
-                <div className="mt-8 pt-4 border-t border-white/5 flex items-center gap-2 text-xs font-mono text-brand-orange">
+                <div className="mt-8 pt-4 border-t border-brand-cream/10 flex items-center gap-2 text-xs font-mono text-brand-olive-light font-bold">
                   <CheckCheck className="w-4 h-4" />
                   <span>{item.metric}</span>
                 </div>
@@ -88,75 +88,74 @@ export default function WhyUs() {
             ))}
           </div>
 
-          {/* Right: Interactive Technical Diagram Box */}
-          <div className="lg:col-span-5 rounded-sm bg-brand-surface/40 border border-white/10 p-8 flex flex-col justify-between relative overflow-hidden">
-            {/* Background Grid */}
-            <div className="absolute inset-0 tech-grid-dense opacity-30 pointer-events-none" />
+          {/* Right: Technical Diagram Box */}
+          <div className="lg:col-span-5 rounded-2xl bg-brand-olive-surface border border-brand-cream/15 p-8 flex flex-col justify-between relative overflow-hidden shadow-2xl">
+            <div className="absolute inset-0 tech-grid-dense opacity-20 pointer-events-none" />
 
             <div className="relative z-10">
-              <div className="flex items-center justify-between border-b border-white/10 pb-4 mb-6">
+              <div className="flex items-center justify-between border-b border-brand-cream/10 pb-4 mb-6">
                 <div className="flex items-center gap-2">
-                  <Activity className="w-4 h-4 text-brand-orange animate-pulse" />
-                  <span className="text-xs font-mono text-white uppercase tracking-wider font-semibold">
+                  <Activity className="w-4 h-4 text-brand-cream animate-pulse" />
+                  <span className="text-xs font-mono text-brand-cream uppercase tracking-wider font-semibold">
                     SYS_DIAGNOSTIC_RADAR
                   </span>
                 </div>
-                <span className="text-[10px] font-mono text-brand-orange bg-brand-orange/10 px-2 py-0.5 rounded border border-brand-orange/30">
+                <span className="text-[10px] font-mono text-brand-cream bg-brand-olive px-3 py-1 rounded-full border border-brand-cream/20">
                   REALTIME
                 </span>
               </div>
 
               {/* Technical Telemetry Bars */}
-              <div className="space-y-4 font-mono text-xs">
+              <div className="space-y-5 font-mono text-xs">
                 <div>
-                  <div className="flex justify-between text-brand-cream/80 mb-1">
+                  <div className="flex justify-between text-brand-cream mb-1.5 font-bold">
                     <span>ARCHITECTURAL_RESILIENCE</span>
-                    <span className="text-brand-orange">99.98%</span>
+                    <span className="text-brand-olive-light">99.98%</span>
                   </div>
-                  <div className="h-1.5 w-full bg-white/10 rounded-full overflow-hidden">
-                    <div className="h-full bg-brand-orange w-[99.98%]" />
+                  <div className="h-2 w-full bg-brand-olive-dark rounded-full overflow-hidden">
+                    <div className="h-full bg-brand-cream w-[99.98%]" />
                   </div>
                 </div>
 
                 <div>
-                  <div className="flex justify-between text-brand-cream/80 mb-1">
+                  <div className="flex justify-between text-brand-cream mb-1.5 font-bold">
                     <span>SECURITY_POSTURE_INDEX</span>
-                    <span className="text-brand-orange">100 / 100</span>
+                    <span className="text-brand-olive-light">100 / 100</span>
                   </div>
-                  <div className="h-1.5 w-full bg-white/10 rounded-full overflow-hidden">
-                    <div className="h-full bg-brand-orange w-full" />
+                  <div className="h-2 w-full bg-brand-olive-dark rounded-full overflow-hidden">
+                    <div className="h-full bg-brand-cream w-full" />
                   </div>
                 </div>
 
                 <div>
-                  <div className="flex justify-between text-brand-cream/80 mb-1">
+                  <div className="flex justify-between text-brand-cream mb-1.5 font-bold">
                     <span>AUTOMATION_EFFICIENCY</span>
-                    <span className="text-brand-orange">+850%</span>
+                    <span className="text-brand-olive-light">+850%</span>
                   </div>
-                  <div className="h-1.5 w-full bg-white/10 rounded-full overflow-hidden">
-                    <div className="h-full bg-brand-orange w-[90%]" />
+                  <div className="h-2 w-full bg-brand-olive-dark rounded-full overflow-hidden">
+                    <div className="h-full bg-brand-cream w-[90%]" />
                   </div>
                 </div>
 
                 <div>
-                  <div className="flex justify-between text-brand-cream/80 mb-1">
+                  <div className="flex justify-between text-brand-cream mb-1.5 font-bold">
                     <span>CODE_QUALITY_SCORE</span>
-                    <span className="text-brand-orange">A+ (Grade 1)</span>
+                    <span className="text-brand-olive-light">A+ (Grade 1)</span>
                   </div>
-                  <div className="h-1.5 w-full bg-white/10 rounded-full overflow-hidden">
-                    <div className="h-full bg-brand-orange w-[96%]" />
+                  <div className="h-2 w-full bg-brand-olive-dark rounded-full overflow-hidden">
+                    <div className="h-full bg-brand-cream w-[96%]" />
                   </div>
                 </div>
               </div>
             </div>
 
             {/* Bottom code snippet box */}
-            <div className="relative z-10 mt-8 p-4 rounded-sm bg-brand-dark/90 border border-white/10 font-mono text-[11px] text-brand-cream/80 space-y-1">
-              <div className="text-brand-orange">// INTELLISCORE Deployment Guard</div>
-              <div className="text-white/60">
+            <div className="relative z-10 mt-8 p-4 rounded-xl bg-brand-olive-dark border border-brand-cream/15 font-mono text-[11px] text-brand-cream space-y-1">
+              <div className="text-brand-olive-light font-bold">// INTELLISCORE Deployment Guard</div>
+              <div className="text-brand-cream-muted">
                 &gt; verifyArchitecture(productionSpec);
               </div>
-              <div className="text-green-400">
+              <div className="text-brand-cream font-bold">
                 ✓ Ready for zero-downtime continuous scaling.
               </div>
             </div>
