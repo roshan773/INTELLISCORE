@@ -46,7 +46,7 @@ export default function Navbar() {
             className="flex items-center gap-2.5 group focus:outline-none"
             aria-label="INTELLUSCORE Home"
           >
-            <div className="w-8 h-8 rounded-full bg-brand-olive-light flex items-center justify-center text-brand-olive-dark font-display font-black text-sm group-hover:rotate-45 transition-transform duration-300">
+            <div className="w-8 h-8 rounded-full flex items-center justify-center text-brand-olive-dark font-display font-black text-sm group-hover:rotate-45 transition-transform duration-300">
               <img src="/Intelluscore favicon.ico" alt="" />
             </div>
             <span className="font-display text-xl sm:text-2xl font-bold tracking-wider text-brand-cream">
