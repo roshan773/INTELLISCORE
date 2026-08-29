@@ -146,7 +146,7 @@ export default function Cybersecurity() {
               </div>
             </div>
           </div>
-          <MagneticButton variant="primary" href="/#cta" className="rounded-full px-7 py-3 text-xs">
+          <MagneticButton variant="primary" href="/contact" className="rounded-full px-7 py-3 text-xs">
             <span>Request Vulnerability Audit</span>
           </MagneticButton>
         </div>

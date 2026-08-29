@@ -272,7 +272,7 @@ export default function ServicesPage() {
                 </div>
 
                 <div className="mt-8 pt-4">
-                  <MagneticButton variant="primary" href="/#cta" className="w-full justify-center text-xs rounded-full py-3">
+                  <MagneticButton variant="primary" href="/contact" className="w-full justify-center text-xs rounded-full py-3">
                     <span>Select Model</span>
                     <ArrowUpRight className="w-3.5 h-3.5" />
                   </MagneticButton>
@@ -294,7 +294,7 @@ export default function ServicesPage() {
             Get a tailored architecture roadmap, technical feasibility assessment, and timeline estimate from our senior engineering team.
           </p>
           <div className="pt-4">
-            <MagneticButton variant="olive" href="/#cta" className="rounded-full px-8 py-4 text-xs font-bold">
+            <MagneticButton variant="olive" href="/contact" className="rounded-full px-8 py-4 text-xs font-bold">
               <span>Start Discovery Call</span>
               <ArrowUpRight className="w-4 h-4" />
             </MagneticButton>

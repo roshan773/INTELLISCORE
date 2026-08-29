@@ -182,7 +182,7 @@ export default function CaseStudies() {
                     </p>
                   </div>
 
-                  <MagneticButton variant="primary" href="#cta" className="w-full justify-center text-xs rounded-full py-3.5">
+                  <MagneticButton variant="primary" href="/contact" className="w-full justify-center text-xs rounded-full py-3.5">
                     <span>Discuss Similar Solution</span>
                     <ArrowUpRight className="w-4 h-4" />
                   </MagneticButton>

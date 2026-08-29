@@ -199,7 +199,7 @@ export default function Services() {
               We consult directly with technical leaders to architect tailored digital ecosystems.
             </p>
           </div>
-          <MagneticButton variant="primary" href="#cta" className="rounded-full px-8 py-3.5 text-xs">
+          <MagneticButton variant="primary" href="/contact" className="rounded-full px-8 py-3.5 text-xs">
             <span>Schedule Discovery Call</span>
             <ArrowUpRight className="w-4 h-4" />
           </MagneticButton>

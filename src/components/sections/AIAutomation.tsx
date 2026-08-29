@@ -169,7 +169,7 @@ export default function AIAutomation() {
               We audit your team’s repetitive workflows and build bespoke agentic automations in 2 to 4 weeks.
             </p>
           </div>
-          <MagneticButton variant="primary" href="/#cta" className="rounded-full px-8 py-4 text-xs shrink-0">
+          <MagneticButton variant="primary" href="/contact" className="rounded-full px-8 py-4 text-xs shrink-0">
             <span>Automate Your Workflows</span>
             <ArrowRight className="w-4 h-4" />
           </MagneticButton>
