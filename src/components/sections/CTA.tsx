@@ -1,11 +1,13 @@
 "use client";
 
 import React, { useState } from "react";
+import { useRouter } from "next/navigation";
 import { ArrowRight, CheckCircle2, ShieldCheck, AlertCircle } from "lucide-react";
 
 const WEB3FORMS_KEY = "3d398c30-6ab1-4d12-a992-85dbd252b1ae";
 
 export default function CTA() {
+  const router = useRouter();
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
@@ -43,8 +45,11 @@ export default function CTA() {
 
       if (response.ok || (result && result.success)) {
         setSubmitted(true);
+        setTimeout(() => {
+          router.push("/thank-you");
+        }, 800);
       } else {
-        const fallbackRes = await fetch("/api/contact", {
+        await fetch("/api/contact", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
@@ -53,11 +58,18 @@ export default function CTA() {
             service: formState.service,
             message: formState.message,
           }),
-        });
+        }).catch(() => null);
+
         setSubmitted(true);
+        setTimeout(() => {
+          router.push("/thank-you");
+        }, 800);
       }
     } catch {
       setSubmitted(true);
+      setTimeout(() => {
+        router.push("/thank-you");
+      }, 800);
     } finally {
       setLoading(false);
     }
@@ -107,25 +119,15 @@ export default function CTA() {
             <div className="p-8 md:p-12 rounded-3xl bg-brand-olive-dark text-brand-cream border border-brand-cream/20 shadow-2xl relative">
               {submitted ? (
                 <div className="py-12 text-center space-y-4">
-                  <div className="w-16 h-16 rounded-full bg-brand-cream/20 border border-brand-cream text-brand-cream flex items-center justify-center mx-auto">
-                    <CheckCircle2 className="w-8 h-8" />
+                  <div className="w-16 h-16 rounded-full bg-brand-cream/20 border border-brand-cream text-brand-cream flex items-center justify-center mx-auto shadow-xl">
+                    <CheckCircle2 className="w-8 h-8 text-brand-cream animate-bounce" />
                   </div>
                   <h3 className="font-display text-3xl font-bold text-brand-cream">
-                    Discovery Request Received
+                    Redirecting to Secure Confirmation...
                   </h3>
                   <p className="text-sm text-brand-cream-muted max-w-md mx-auto">
-                    An INTELLUSCORE principal engineer will review your project requirements and get
-                    back to you within 24 hours.
+                    Thank you, <span className="text-brand-cream font-medium">{formState.name}</span>. Initializing discovery protocol.
                   </p>
-                  <button
-                    onClick={() => {
-                      setSubmitted(false);
-                      setFormState({ name: "", email: "", service: "Web Architecture & Modern Platforms", message: "" });
-                    }}
-                    className="text-xs font-mono text-brand-cream underline uppercase tracking-wider mt-4 cursor-pointer"
-                  >
-                    Send Another Message
-                  </button>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-5">

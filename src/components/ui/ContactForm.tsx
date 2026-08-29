@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import { ArrowRight, CheckCircle2, ShieldCheck, Lock, Sparkles, AlertCircle } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { ArrowRight, ShieldCheck, Lock, Sparkles, AlertCircle, CheckCircle2 } from "lucide-react";
 
 const serviceOptions = [
   "Web Architecture & Modern Platforms",
@@ -15,8 +16,9 @@ const serviceOptions = [
 const WEB3FORMS_KEY = "3d398c30-6ab1-4d12-a992-85dbd252b1ae";
 
 export default function ContactForm() {
-  const [submitted, setSubmitted] = useState(false);
+  const router = useRouter();
   const [loading, setLoading] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [formState, setFormState] = useState({
     name: "",
@@ -53,9 +55,12 @@ export default function ContactForm() {
 
       if (response.ok || (result && result.success)) {
         setSubmitted(true);
+        setTimeout(() => {
+          router.push("/thank-you");
+        }, 800);
       } else {
-        // Fallback to internal API route
-        const fallbackRes = await fetch("/api/contact", {
+        // Fallback
+        await fetch("/api/contact", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
@@ -64,16 +69,18 @@ export default function ContactForm() {
             service: formState.service,
             message: formState.message,
           }),
-        });
-        if (fallbackRes.ok) {
-          setSubmitted(true);
-        } else {
-          setSubmitted(true); // Always give user success confirmation
-        }
+        }).catch(() => null);
+
+        setSubmitted(true);
+        setTimeout(() => {
+          router.push("/thank-you");
+        }, 800);
       }
     } catch {
-      // Offline / fallback protection
       setSubmitted(true);
+      setTimeout(() => {
+        router.push("/thank-you");
+      }, 800);
     } finally {
       setLoading(false);
     }
@@ -84,7 +91,7 @@ export default function ContactForm() {
       {submitted ? (
         <div className="py-12 text-center space-y-5 animate-fadeIn">
           <div className="w-16 h-16 rounded-full bg-brand-cream/20 border border-brand-cream text-brand-cream flex items-center justify-center mx-auto shadow-xl">
-            <CheckCircle2 className="w-8 h-8 text-brand-cream" />
+            <CheckCircle2 className="w-8 h-8 text-brand-cream animate-bounce" />
           </div>
 
           <div className="space-y-2">
@@ -92,39 +99,12 @@ export default function ContactForm() {
               // DISCOVERY REQUEST TRANSMITTED
             </div>
             <h3 className="font-display text-3xl sm:text-4xl font-bold text-brand-cream">
-              Discovery Request Received
+              Redirecting to Secure Confirmation...
             </h3>
             <p className="text-sm text-brand-cream-muted max-w-md mx-auto leading-relaxed">
-              Thank you, <span className="text-brand-cream font-medium">{formState.name}</span>. An INTELLUSCORE
-              principal engineer is reviewing your requirements and will reach out to{" "}
-              <span className="text-brand-cream font-medium">{formState.email}</span> within 24 hours.
+              Thank you, <span className="text-brand-cream font-medium">{formState.name}</span>. Initializing your technical discovery protocol.
             </p>
           </div>
-
-          <div className="p-4 rounded-2xl bg-brand-olive-surface border border-brand-cream/15 max-w-sm mx-auto text-left text-xs font-mono space-y-1.5">
-            <div className="flex justify-between text-brand-cream-muted">
-              <span>Reference ID:</span>
-              <span className="text-brand-cream font-bold">IS-{Math.floor(100000 + Math.random() * 900000)}</span>
-            </div>
-            <div className="flex justify-between text-brand-cream-muted">
-              <span>SLA Response:</span>
-              <span className="text-brand-olive-light font-bold">Within 24 Hours</span>
-            </div>
-            <div className="flex justify-between text-brand-cream-muted border-t border-brand-cream/10 pt-1.5">
-              <span>Confidentiality:</span>
-              <span className="text-brand-cream font-bold">Mutual NDA Protected</span>
-            </div>
-          </div>
-
-          <button
-            onClick={() => {
-              setSubmitted(false);
-              setFormState({ name: "", email: "", service: serviceOptions[0], message: "" });
-            }}
-            className="text-xs font-mono text-brand-cream underline uppercase tracking-wider hover:text-white transition-colors cursor-pointer pt-2 inline-block"
-          >
-            Send Another Message
-          </button>
         </div>
       ) : (
         <form onSubmit={handleSubmit} className="space-y-6">
@@ -230,7 +210,7 @@ export default function ContactForm() {
             className="w-full py-4 rounded-full bg-brand-cream hover:bg-white text-brand-olive-dark font-display font-bold uppercase tracking-wider text-sm flex items-center justify-center gap-2 transition-all shadow-xl shadow-brand-cream/20 cursor-pointer disabled:opacity-50"
           >
             {loading ? (
-              <span>Transmitting Request...</span>
+              <span>Transmitting Protocol...</span>
             ) : (
               <>
                 <span>Start a Conversation</span>
