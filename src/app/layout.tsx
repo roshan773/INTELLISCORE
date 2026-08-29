@@ -3,6 +3,7 @@ import { Plus_Jakarta_Sans, Oswald } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/components/layout/SmoothScroll";
 import FuturisticLoader from "@/components/ui/FuturisticLoader";
+import ScrollCanvas from "@/components/3d/ScrollCanvas";
 
 const plusJakarta = Plus_Jakarta_Sans({
   variable: "--font-body-custom",
@@ -54,9 +55,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${plusJakarta.variable} ${oswald.variable} scroll-smooth`}>
-      <body className="bg-brand-olive-dark text-brand-cream font-body selection:bg-brand-cream selection:text-brand-olive-dark antialiased">
+      <body className="bg-brand-olive-dark text-brand-cream font-body selection:bg-brand-cream selection:text-brand-olive-dark antialiased relative">
         <FuturisticLoader />
-        <SmoothScroll>{children}</SmoothScroll>
+        <ScrollCanvas />
+        <div className="relative z-10">
+          <SmoothScroll>{children}</SmoothScroll>
+        </div>
       </body>
     </html>
   );
