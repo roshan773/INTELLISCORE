@@ -16,7 +16,7 @@ import {
 } from "lucide-react";
 
 export const metadata = {
-  title: "Engineering Insights & Intel — INTELLISCORE",
+  title: "Engineering Insights & Intel — INTELLUSCORE",
   description:
     "Technical thought leadership, benchmarks, and architectural playbooks on AI automation, Zero-Trust cybersecurity, and Next.js web platforms.",
 };
@@ -103,7 +103,7 @@ export default function InsightsPage() {
           </h1>
 
           <p className="text-lg sm:text-xl md:text-2xl text-brand-cream-muted font-light max-w-3xl leading-relaxed">
-            In-depth technical analysis, architecture benchmarks, and playbooks authored by INTELLISCORE principal engineers.
+            In-depth technical analysis, architecture benchmarks, and playbooks authored by INTELLUSCORE principal engineers.
           </p>
         </div>
       </section>
@@ -176,7 +176,7 @@ export default function InsightsPage() {
             // EXECUTIVE INTEL DISPATCH
           </div>
           <h2 className="font-display text-4xl sm:text-5xl md:text-6xl font-bold uppercase tracking-tight">
-            Subscribe to the INTELLISCORE Briefing.
+            Subscribe to the INTELLUSCORE Briefing.
           </h2>
           <p className="text-base sm:text-lg text-brand-olive-deep max-w-xl mx-auto font-normal">
             A monthly dispatch of architecture benchmarks, zero-day threat analysis, and AI agent engineering patterns. Zero spam.

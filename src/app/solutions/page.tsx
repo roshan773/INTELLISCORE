@@ -18,9 +18,9 @@ import {
 } from "lucide-react";
 
 export const metadata = {
-  title: "Enterprise Solutions — INTELLISCORE | AI, Cloud & Security Architectures",
+  title: "Enterprise Solutions — INTELLUSCORE | AI, Cloud & Security Architectures",
   description:
-    "Discover INTELLISCORE's enterprise-grade solutions across autonomous workflow automation, zero-trust cloud vaults, and real-time data streaming architectures.",
+    "Discover INTELLUSCORE's enterprise-grade solutions across autonomous workflow automation, zero-trust cloud vaults, and real-time data streaming architectures.",
 };
 
 const solutionsList = [
@@ -191,7 +191,7 @@ export default function SolutionsPage() {
             </div>
             <h2 className="font-display text-4xl sm:text-6xl font-bold uppercase text-brand-cream tracking-tight">
               LEGACY VS. <br />
-              <span className="text-brand-olive-light">INTELLISCORE STANDARDS.</span>
+              <span className="text-brand-olive-light">INTELLUSCORE STANDARDS.</span>
             </h2>
           </div>
 
@@ -202,7 +202,7 @@ export default function SolutionsPage() {
                   <tr className="border-b border-brand-cream/15 bg-brand-olive-dark/80 text-xs font-mono uppercase tracking-wider text-brand-cream-muted">
                     <th className="p-6">Technical Dimension</th>
                     <th className="p-6 text-red-300/80">Legacy Agency Stacks</th>
-                    <th className="p-6 text-brand-cream font-bold bg-brand-olive/20">INTELLISCORE Blueprint</th>
+                    <th className="p-6 text-brand-cream font-bold bg-brand-olive/20">INTELLUSCORE Blueprint</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-brand-cream/10 text-sm font-light">
@@ -234,7 +234,7 @@ export default function SolutionsPage() {
         <div className="max-w-5xl mx-auto text-center space-y-6">
           <h2 className="font-display text-5xl sm:text-6xl md:text-7xl font-bold uppercase tracking-tight leading-[0.9]">
             READY TO SCALE WITH <br />
-            <span className="text-brand-olive">INTELLISCORE SOLUTIONS?</span>
+            <span className="text-brand-olive">INTELLUSCORE SOLUTIONS?</span>
           </h2>
           <p className="text-base sm:text-lg text-brand-olive-deep max-w-xl mx-auto font-normal">
             Request a technical feasibility session with our principal systems engineers today.

@@ -15,9 +15,9 @@ import {
 } from "lucide-react";
 
 export const metadata = {
-  title: "Contact & Technical Discovery — INTELLISCORE",
+  title: "Contact & Technical Discovery — INTELLUSCORE",
   description:
-    "Initiate an enterprise technical discovery consultation with INTELLISCORE principal systems architects, AI engineers, and cybersecurity consultants.",
+    "Initiate an enterprise technical discovery consultation with INTELLUSCORE principal systems architects, AI engineers, and cybersecurity consultants.",
 };
 
 const discoverySteps = [

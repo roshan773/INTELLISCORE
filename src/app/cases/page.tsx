@@ -16,9 +16,9 @@ import {
 } from "lucide-react";
 
 export const metadata = {
-  title: "Case Studies & Client Impact — INTELLISCORE",
+  title: "Case Studies & Client Impact — INTELLUSCORE",
   description:
-    "Explore how INTELLISCORE engineered high-performance web systems, AI automation pipelines, and zero-trust cybersecurity for enterprise clients.",
+    "Explore how INTELLUSCORE engineered high-performance web systems, AI automation pipelines, and zero-trust cybersecurity for enterprise clients.",
 };
 
 const fullCases = [
@@ -31,7 +31,7 @@ const fullCases = [
     challenge:
       "Apex Capital required a next-generation web trading portal capable of executing high-frequency transactions with strict sub-20ms latency while maintaining institutional SOC2 Type II and FINRA compliance under constant automated attack vectors.",
     solution:
-      "INTELLISCORE engineered a distributed micro-frontend web architecture using Next.js, Rust-backed WebAssembly compute modules, and an immutable Zero-Trust cloud vault deployed across AWS GovCloud with automated cryptographic key rotation.",
+      "INTELLUSCORE engineered a distributed micro-frontend web architecture using Next.js, Rust-backed WebAssembly compute modules, and an immutable Zero-Trust cloud vault deployed across AWS GovCloud with automated cryptographic key rotation.",
     outcomes: [
       "Sub-15ms average transaction execution latency",
       "$4.2B+ daily transaction volume processed securely",
@@ -67,7 +67,7 @@ const fullCases = [
     challenge:
       "Clinicians struggled with slow legacy portals that failed when uploading and rendering multi-gigabyte genomic sequencing files, causing diagnostic delays and posing severe HIPAA data compliance risks.",
     solution:
-      "INTELLISCORE engineered a high-concurrency Next.js web application paired with distributed chunked file upload workers and end-to-end client-side AES-256 encryption, allowing instant interactive chromosome visualization.",
+      "INTELLUSCORE engineered a high-concurrency Next.js web application paired with distributed chunked file upload workers and end-to-end client-side AES-256 encryption, allowing instant interactive chromosome visualization.",
     outcomes: [
       "99.99% portal uptime under surge traffic across 50,000+ clinicians",
       "100% HIPAA and GDPR regulatory compliance verification",

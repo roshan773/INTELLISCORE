@@ -18,9 +18,9 @@ import {
 } from "lucide-react";
 
 export const metadata = {
-  title: "About Us — INTELLISCORE | Engineering, AI & Cybersecurity",
+  title: "About Us — INTELLUSCORE | Engineering, AI & Cybersecurity",
   description:
-    "Learn about INTELLISCORE's founding vision, engineering leadership, and global standards for building resilient, high-speed digital systems.",
+    "Learn about INTELLUSCORE's founding vision, engineering leadership, and global standards for building resilient, high-speed digital systems.",
 };
 
 const leadership = [
@@ -74,7 +74,7 @@ export default function AboutPage() {
           </h1>
 
           <p className="text-lg sm:text-xl md:text-2xl text-brand-cream-muted font-light max-w-3xl leading-relaxed">
-            INTELLISCORE was founded on a simple conviction: modern enterprises cannot afford fragile
+            INTELLUSCORE was founded on a simple conviction: modern enterprises cannot afford fragile
             software, sluggish manual processes, or bolted-on security. We build systems where speed,
             intelligence, and defense are native from day one.
           </p>
@@ -96,7 +96,7 @@ export default function AboutPage() {
 
             <p className="text-base sm:text-lg text-brand-cream-muted font-light leading-relaxed">
               Traditional technology agencies separate web development from cybersecurity and treat AI as
-              a trendy afterthought. At INTELLISCORE, every web platform we engineer is built by full-stack
+              a trendy afterthought. At INTELLUSCORE, every web platform we engineer is built by full-stack
               software architects, hardened by defensive cybersecurity researchers, and enhanced by
               autonomous workflow engineers.
             </p>
@@ -117,7 +117,7 @@ export default function AboutPage() {
             <div className="rounded-3xl overflow-hidden border border-brand-cream/20 shadow-2xl relative aspect-[16/10]">
               <Image
                 src="/images/hero-nexus.jpg"
-                alt="INTELLISCORE Quantum Technology Nexus"
+                alt="INTELLUSCORE Quantum Technology Nexus"
                 fill
                 className="object-cover"
                 priority
@@ -141,7 +141,7 @@ export default function AboutPage() {
             </div>
             <h2 className="font-display text-4xl sm:text-6xl md:text-7xl font-bold uppercase text-brand-cream tracking-tight leading-[0.9]">
               THE MINDS BEHIND <br />
-              <span className="text-brand-olive-light">INTELLISCORE.</span>
+              <span className="text-brand-olive-light">INTELLUSCORE.</span>
             </h2>
           </div>
 
@@ -224,7 +224,7 @@ export default function AboutPage() {
         <div className="max-w-5xl mx-auto text-center space-y-6">
           <h2 className="font-display text-5xl sm:text-6xl md:text-7xl font-bold uppercase tracking-tight leading-[0.9]">
             WANT TO PARTNER WITH <br />
-            <span className="text-brand-olive">INTELLISCORE?</span>
+            <span className="text-brand-olive">INTELLUSCORE?</span>
           </h2>
           <p className="text-base sm:text-lg text-brand-olive-deep max-w-xl mx-auto font-normal">
             Schedule an executive technical briefing to discuss your architecture, automation goals,

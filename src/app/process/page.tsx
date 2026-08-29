@@ -19,9 +19,9 @@ import {
 } from "lucide-react";
 
 export const metadata = {
-  title: "Engineering Process — INTELLISCORE | 7-Stage Methodology",
+  title: "Engineering Process — INTELLUSCORE | 7-Stage Methodology",
   description:
-    "Explore INTELLISCORE's rigorous 7-stage engineering journey from technical discovery to global scaling and continuous security.",
+    "Explore INTELLUSCORE's rigorous 7-stage engineering journey from technical discovery to global scaling and continuous security.",
 };
 
 const fullProcess = [

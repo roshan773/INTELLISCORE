@@ -18,9 +18,9 @@ import {
 } from "lucide-react";
 
 export const metadata = {
-  title: "Our Philosophy — INTELLISCORE | Engineering Manifesto",
+  title: "Our Philosophy — INTELLUSCORE | Engineering Manifesto",
   description:
-    "Explore INTELLISCORE's engineering manifesto: Think Forward, Build Smart, Automate Better, Secure Everything.",
+    "Explore INTELLUSCORE's engineering manifesto: Think Forward, Build Smart, Automate Better, Secure Everything.",
 };
 
 const pillars = [
@@ -97,7 +97,7 @@ export default function PhilosophyPage() {
           </h1>
 
           <p className="text-lg sm:text-xl md:text-2xl text-brand-cream-muted font-light max-w-3xl leading-relaxed">
-            The INTELLISCORE engineering manifesto: four foundational principles that govern every
+            The INTELLUSCORE engineering manifesto: four foundational principles that govern every
             architecture we design, line of code we write, and system we fortify.
           </p>
         </div>
@@ -167,7 +167,7 @@ export default function PhilosophyPage() {
             Full Transparency. Zero Lock-In.
           </h2>
           <p className="text-base sm:text-lg text-brand-cream-muted max-w-2xl mx-auto font-light leading-relaxed">
-            Every software product built by INTELLISCORE comes with complete source code repository access,
+            Every software product built by INTELLUSCORE comes with complete source code repository access,
             comprehensive architecture documentation, and automated deployment scripts. You own 100% of the IP.
           </p>
         </div>

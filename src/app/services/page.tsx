@@ -18,9 +18,9 @@ import {
 } from "lucide-react";
 
 export const metadata = {
-  title: "Core Services — INTELLISCORE | Web, AI, Cybersecurity & Custom Software",
+  title: "Core Services — INTELLUSCORE | Web, AI, Cybersecurity & Custom Software",
   description:
-    "Explore INTELLISCORE's specialized services in modern web platform engineering, autonomous AI agent pipelines, zero-trust cybersecurity, and custom enterprise software.",
+    "Explore INTELLUSCORE's specialized services in modern web platform engineering, autonomous AI agent pipelines, zero-trust cybersecurity, and custom enterprise software.",
 };
 
 const serviceDeepDives = [
