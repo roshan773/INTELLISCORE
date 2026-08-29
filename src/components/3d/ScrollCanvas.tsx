@@ -17,7 +17,7 @@ export default function ScrollCanvas() {
       0.1,
       1000
     );
-    camera.position.z = 30;
+    camera.position.z = 28;
 
     const renderer = new THREE.WebGLRenderer({
       alpha: true,
@@ -28,59 +28,72 @@ export default function ScrollCanvas() {
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     containerRef.current.appendChild(renderer.domElement);
 
-    // 2. Futuristic 3D Geometric Objects (Wireframe Polyhedra)
-    // Main Icosahedron Core
-    const icoGeometry = new THREE.IcosahedronGeometry(7, 2);
+    // 2. Futuristic 3D Geometric Objects (Glowing Wireframe Polyhedra)
+    
+    // Core Icosahedron (Top Right)
+    const icoGeometry = new THREE.IcosahedronGeometry(8, 2);
     const icoMaterial = new THREE.MeshBasicMaterial({
-      color: 0x769440,
+      color: 0x96b857,
       wireframe: true,
       transparent: true,
-      opacity: 0.28,
+      opacity: 0.45,
     });
     const icosahedron = new THREE.Mesh(icoGeometry, icoMaterial);
-    icosahedron.position.set(12, -2, -5);
+    icosahedron.position.set(14, 0, -4);
     scene.add(icosahedron);
 
-    // Torus Knot Accent Structure
-    const torusGeometry = new THREE.TorusKnotGeometry(4.5, 1.2, 100, 16);
+    // Torus Knot Core (Mid Left)
+    const torusGeometry = new THREE.TorusKnotGeometry(5, 1.3, 120, 16);
     const torusMaterial = new THREE.MeshBasicMaterial({
       color: 0xfffdd0,
       wireframe: true,
       transparent: true,
-      opacity: 0.18,
+      opacity: 0.35,
     });
     const torusKnot = new THREE.Mesh(torusGeometry, torusMaterial);
-    torusKnot.position.set(-14, -15, -8);
+    torusKnot.position.set(-15, -18, -6);
     scene.add(torusKnot);
 
-    // Cyber Octahedron Satellite
-    const octaGeometry = new THREE.OctahedronGeometry(5, 1);
+    // Octahedron Satellite (Lower Right)
+    const octaGeometry = new THREE.OctahedronGeometry(6, 1);
     const octaMaterial = new THREE.MeshBasicMaterial({
-      color: 0x96b857,
+      color: 0x769440,
       wireframe: true,
       transparent: true,
-      opacity: 0.22,
+      opacity: 0.4,
     });
     const octahedron = new THREE.Mesh(octaGeometry, octaMaterial);
-    octahedron.position.set(10, -32, -4);
+    octahedron.position.set(12, -38, -4);
     scene.add(octahedron);
 
-    // 3. Cyber Quantum Particle Cloud
-    const particleCount = 750;
+    // Outer Cyber Ring / Torus (Mid Depth)
+    const ringGeometry = new THREE.TorusGeometry(12, 0.15, 16, 100);
+    const ringMaterial = new THREE.MeshBasicMaterial({
+      color: 0xfffdd0,
+      transparent: true,
+      opacity: 0.25,
+      wireframe: true,
+    });
+    const cyberRing = new THREE.Mesh(ringGeometry, ringMaterial);
+    cyberRing.position.set(0, -10, -12);
+    cyberRing.rotation.x = Math.PI / 3;
+    scene.add(cyberRing);
+
+    // 3. Cyber Quantum Particle Cloud (800+ dual-toned stars)
+    const particleCount = 850;
     const particleGeo = new THREE.BufferGeometry();
     const positions = new Float32Array(particleCount * 3);
     const colors = new Float32Array(particleCount * 3);
 
     const creamColor = new THREE.Color(0xfffdd0);
-    const oliveColor = new THREE.Color(0x769440);
+    const oliveColor = new THREE.Color(0x96b857);
 
     for (let i = 0; i < particleCount * 3; i += 3) {
-      // Spread particles across a wide 3D cylindrical space
-      positions[i] = (Math.random() - 0.5) * 80;
-      positions[i + 1] = (Math.random() - 0.5) * 160;
-      positions[i + 2] = (Math.random() - 0.5) * 60;
+      positions[i] = (Math.random() - 0.5) * 90;
+      positions[i + 1] = (Math.random() - 0.5) * 180;
+      positions[i + 2] = (Math.random() - 0.5) * 70;
 
-      const mixedColor = Math.random() > 0.5 ? creamColor : oliveColor;
+      const mixedColor = Math.random() > 0.4 ? creamColor : oliveColor;
       colors[i] = mixedColor.r;
       colors[i + 1] = mixedColor.g;
       colors[i + 2] = mixedColor.b;
@@ -90,16 +103,16 @@ export default function ScrollCanvas() {
     particleGeo.setAttribute("color", new THREE.BufferAttribute(colors, 3));
 
     const particleMat = new THREE.PointsMaterial({
-      size: 0.35,
+      size: 0.5,
       vertexColors: true,
       transparent: true,
-      opacity: 0.65,
+      opacity: 0.75,
     });
 
     const particleSystem = new THREE.Points(particleGeo, particleMat);
     scene.add(particleSystem);
 
-    // 4. Dynamic Scroll & Mouse State Tracking
+    // 4. Scroll & Gyro Mouse Tracking
     let scrollY = window.scrollY;
     let targetScrollY = scrollY;
     let mouseX = 0;
@@ -119,7 +132,6 @@ export default function ScrollCanvas() {
     window.addEventListener("scroll", handleScroll, { passive: true });
     window.addEventListener("mousemove", handleMouseMove, { passive: true });
 
-    // 5. Handle Resize
     const handleResize = () => {
       camera.aspect = window.innerWidth / window.innerHeight;
       camera.updateProjectionMatrix();
@@ -129,7 +141,7 @@ export default function ScrollCanvas() {
 
     window.addEventListener("resize", handleResize);
 
-    // 6. Smooth Animation Render Loop
+    // 5. High-FPS Render Loop with Scroll Parallax
     let animationFrameId: number;
     const clock = new THREE.Clock();
 
@@ -138,10 +150,9 @@ export default function ScrollCanvas() {
 
       const elapsedTime = clock.getElapsedTime();
 
-      // Smooth Lerp for Scroll & Mouse
-      scrollY += (targetScrollY - scrollY) * 0.06;
-      mouseX += (targetMouseX - mouseX) * 0.05;
-      mouseY += (targetMouseY - mouseY) * 0.05;
+      scrollY += (targetScrollY - scrollY) * 0.08;
+      mouseX += (targetMouseX - mouseX) * 0.06;
+      mouseY += (targetMouseY - mouseY) * 0.06;
 
       const totalDocHeight = Math.max(
         document.body.scrollHeight - window.innerHeight,
@@ -149,34 +160,36 @@ export default function ScrollCanvas() {
       );
       const scrollProgress = scrollY / totalDocHeight;
 
-      // Scroll-Driven Camera Motion (Z-depth & Y-traverse)
-      camera.position.y = -scrollProgress * 45 + mouseY * 2;
-      camera.position.x = Math.sin(scrollProgress * Math.PI * 2) * 5 + mouseX * 2;
-      camera.rotation.y = mouseX * 0.15;
-      camera.rotation.x = -mouseY * 0.15;
+      // Scroll-Driven Camera Motion
+      camera.position.y = -scrollProgress * 50 + mouseY * 2;
+      camera.position.x = Math.sin(scrollProgress * Math.PI * 2) * 6 + mouseX * 2.5;
+      camera.rotation.y = mouseX * 0.18;
+      camera.rotation.x = -mouseY * 0.18;
 
-      // Rotate & Morph 3D Geometries on Scroll + Time
-      icosahedron.rotation.x = elapsedTime * 0.15 + scrollProgress * 4;
-      icosahedron.rotation.y = elapsedTime * 0.2 + scrollProgress * 5;
-      icosahedron.position.x = 12 + Math.sin(scrollProgress * Math.PI * 3) * 6;
+      // 3D Wireframe Transformations
+      icosahedron.rotation.x = elapsedTime * 0.2 + scrollProgress * 5;
+      icosahedron.rotation.y = elapsedTime * 0.25 + scrollProgress * 6;
+      icosahedron.position.x = 14 + Math.sin(scrollProgress * Math.PI * 3) * 7;
 
-      torusKnot.rotation.x = elapsedTime * 0.25 + scrollProgress * 6;
-      torusKnot.rotation.y = elapsedTime * 0.18 + scrollProgress * 4;
-      torusKnot.position.x = -14 + Math.cos(scrollProgress * Math.PI * 2) * 8;
+      torusKnot.rotation.x = elapsedTime * 0.28 + scrollProgress * 7;
+      torusKnot.rotation.y = elapsedTime * 0.22 + scrollProgress * 5;
+      torusKnot.position.x = -15 + Math.cos(scrollProgress * Math.PI * 2) * 8;
 
-      octahedron.rotation.x = elapsedTime * 0.2 + scrollProgress * 5;
-      octahedron.rotation.z = elapsedTime * 0.15 + scrollProgress * 3;
+      octahedron.rotation.x = elapsedTime * 0.25 + scrollProgress * 6;
+      octahedron.rotation.z = elapsedTime * 0.2 + scrollProgress * 4;
 
-      // Subtle Particle Drift & Expansion
-      particleSystem.rotation.y = elapsedTime * 0.03 + scrollProgress * 1.5;
-      particleSystem.rotation.x = scrollProgress * 0.8;
+      cyberRing.rotation.z = elapsedTime * 0.1 + scrollProgress * 3;
+      cyberRing.rotation.x = Math.PI / 3 + scrollProgress * 2;
+
+      // Quantum Particle Cloud Motion
+      particleSystem.rotation.y = elapsedTime * 0.04 + scrollProgress * 2;
+      particleSystem.rotation.x = scrollProgress * 1.2;
 
       renderer.render(scene, camera);
     };
 
     animate();
 
-    // 7. Cleanup
     return () => {
       cancelAnimationFrame(animationFrameId);
       window.removeEventListener("scroll", handleScroll);
@@ -193,6 +206,8 @@ export default function ScrollCanvas() {
       torusMaterial.dispose();
       octaGeometry.dispose();
       octaMaterial.dispose();
+      ringGeometry.dispose();
+      ringMaterial.dispose();
       particleGeo.dispose();
       particleMat.dispose();
       renderer.dispose();
@@ -202,7 +217,7 @@ export default function ScrollCanvas() {
   return (
     <div
       ref={containerRef}
-      className="fixed inset-0 z-0 pointer-events-none overflow-hidden opacity-80"
+      className="fixed inset-0 z-0 pointer-events-none overflow-hidden"
       style={{ willChange: "transform" }}
     />
   );
