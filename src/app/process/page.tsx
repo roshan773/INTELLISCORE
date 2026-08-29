@@ -216,7 +216,7 @@ export default function ProcessPage() {
             Book a 30-minute discovery call to map your technical requirements into an actionable sprint plan.
           </p>
           <div className="pt-4">
-            <MagneticButton variant="olive" href="/#cta" className="rounded-full px-8 py-4 text-xs font-bold">
+            <MagneticButton variant="olive" href="/contact" className="rounded-full px-8 py-4 text-xs font-bold">
               <span>Schedule Sprint Planning</span>
               <ArrowUpRight className="w-4 h-4" />
             </MagneticButton>
