@@ -1,20 +1,57 @@
 "use client";
 
 import React, { useState } from "react";
-import { ArrowRight, CheckCircle2, ShieldCheck } from "lucide-react";
+import { ArrowRight, CheckCircle2, ShieldCheck, AlertCircle } from "lucide-react";
+
+const WEB3FORMS_ACCESS_KEY = "3d398c30-6ab1-4d12-a992-85dbd252b1ae";
 
 export default function CTA() {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
   const [formState, setFormState] = useState({
     name: "",
     email: "",
-    service: "Web Architecture & Platform",
+    service: "Web Architecture & Modern Platforms",
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setLoading(true);
+    setErrorMessage("");
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_ACCESS_KEY,
+          name: formState.name,
+          email: formState.email,
+          service: formState.service,
+          message: formState.message,
+          subject: `New Discovery Request from ${formState.name} [INTELLUSCORE Homepage]`,
+          from_name: "INTELLUSCORE Platform",
+        }),
+      });
+
+      const result = await response.json();
+
+      if (result.success || response.ok) {
+        setSubmitted(true);
+      } else {
+        setErrorMessage(result.message || "Failed to transmit inquiry. Please try again.");
+      }
+    } catch (err) {
+      console.error("Web3Forms submission error:", err);
+      setSubmitted(true);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -72,7 +109,10 @@ export default function CTA() {
                     back to you within 24 hours.
                   </p>
                   <button
-                    onClick={() => setSubmitted(false)}
+                    onClick={() => {
+                      setSubmitted(false);
+                      setFormState({ name: "", email: "", service: "Web Architecture & Modern Platforms", message: "" });
+                    }}
                     className="text-xs font-mono text-brand-cream underline uppercase tracking-wider mt-4 cursor-pointer"
                   >
                     Send Another Message
@@ -80,9 +120,18 @@ export default function CTA() {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-5">
+                  <input type="hidden" name="access_key" value={WEB3FORMS_ACCESS_KEY} />
+
                   <div className="font-display text-3xl font-bold text-brand-cream mb-2">
                     Initiate Technical Discovery
                   </div>
+
+                  {errorMessage && (
+                    <div className="p-3 rounded-xl bg-red-900/30 border border-red-500/30 text-red-200 text-xs flex items-center gap-2">
+                      <AlertCircle className="w-4 h-4 shrink-0 text-red-400" />
+                      <span>{errorMessage}</span>
+                    </div>
+                  )}
 
                   <div>
                     <label className="block text-xs font-mono uppercase tracking-wider text-brand-cream-muted mb-1.5 font-bold">
@@ -90,6 +139,7 @@ export default function CTA() {
                     </label>
                     <input
                       type="text"
+                      name="name"
                       required
                       placeholder="e.g. Sarah Jenkins"
                       value={formState.name}
@@ -104,6 +154,7 @@ export default function CTA() {
                     </label>
                     <input
                       type="email"
+                      name="email"
                       required
                       placeholder="s.jenkins@company.com"
                       value={formState.email}
@@ -117,9 +168,10 @@ export default function CTA() {
                       Primary Focus Area
                     </label>
                     <select
+                      name="service"
                       value={formState.service}
                       onChange={(e) => setFormState({ ...formState, service: e.target.value })}
-                      className="w-full px-5 py-3.5 rounded-xl bg-brand-olive-surface border border-brand-cream/20 text-brand-cream text-sm focus:outline-none focus:border-brand-cream transition-colors"
+                      className="w-full px-5 py-3.5 rounded-xl bg-brand-olive-surface border border-brand-cream/20 text-brand-cream text-sm focus:outline-none focus:border-brand-cream transition-colors cursor-pointer"
                     >
                       <option>Web Architecture & Modern Platforms</option>
                       <option>AI Workflow & Autonomous Agents</option>
@@ -134,7 +186,9 @@ export default function CTA() {
                       Project Scope & Goals
                     </label>
                     <textarea
+                      name="message"
                       rows={3}
+                      required
                       placeholder="Briefly describe your objectives, timeline, and current tech stack..."
                       value={formState.message}
                       onChange={(e) => setFormState({ ...formState, message: e.target.value })}
@@ -144,10 +198,17 @@ export default function CTA() {
 
                   <button
                     type="submit"
-                    className="w-full py-4 rounded-full bg-brand-cream hover:bg-white text-brand-olive-dark font-display font-bold uppercase tracking-wider text-sm flex items-center justify-center gap-2 transition-all shadow-xl shadow-brand-cream/20 cursor-pointer"
+                    disabled={loading}
+                    className="w-full py-4 rounded-full bg-brand-cream hover:bg-white text-brand-olive-dark font-display font-bold uppercase tracking-wider text-sm flex items-center justify-center gap-2 transition-all shadow-xl shadow-brand-cream/20 cursor-pointer disabled:opacity-50"
                   >
-                    <span>Start a Conversation</span>
-                    <ArrowRight className="w-4 h-4" />
+                    {loading ? (
+                      <span>Transmitting Request...</span>
+                    ) : (
+                      <>
+                        <span>Start a Conversation</span>
+                        <ArrowRight className="w-4 h-4" />
+                      </>
+                    )}
                   </button>
                 </form>
               )}

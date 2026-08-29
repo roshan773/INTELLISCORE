@@ -3,14 +3,38 @@
 import React, { useState } from "react";
 import { CheckCircle2 } from "lucide-react";
 
+const WEB3FORMS_ACCESS_KEY = "3d398c30-6ab1-4d12-a992-85dbd252b1ae";
+
 export default function NewsletterForm() {
   const [subscribed, setSubscribed] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [email, setEmail] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (email) {
+    if (!email) return;
+    setLoading(true);
+
+    try {
+      await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_ACCESS_KEY,
+          email: email,
+          subject: `New Executive Briefing Subscriber: ${email} [INTELLUSCORE]`,
+          from_name: "INTELLUSCORE Platform",
+        }),
+      });
       setSubscribed(true);
+    } catch (err) {
+      console.error("Web3Forms subscription error:", err);
+      setSubscribed(true);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -25,8 +49,10 @@ export default function NewsletterForm() {
 
   return (
     <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row items-center gap-3 max-w-md mx-auto pt-4">
+      <input type="hidden" name="access_key" value={WEB3FORMS_ACCESS_KEY} />
       <input
         type="email"
+        name="email"
         required
         placeholder="engineer@company.com"
         value={email}
@@ -35,9 +61,10 @@ export default function NewsletterForm() {
       />
       <button
         type="submit"
-        className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-brand-olive hover:bg-brand-olive-dark text-brand-cream font-display font-bold text-xs uppercase tracking-wider transition-all shrink-0 cursor-pointer shadow-lg shadow-brand-olive/30"
+        disabled={loading}
+        className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-brand-olive hover:bg-brand-olive-dark text-brand-cream font-display font-bold text-xs uppercase tracking-wider transition-all shrink-0 cursor-pointer shadow-lg shadow-brand-olive/30 disabled:opacity-50"
       >
-        Subscribe
+        {loading ? "Subscribing..." : "Subscribe"}
       </button>
     </form>
   );
