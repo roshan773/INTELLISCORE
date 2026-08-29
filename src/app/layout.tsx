@@ -38,7 +38,11 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "INTELLUSCORE" }],
   icons: {
-    icon: "/favicon.ico",
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: "/favicon.ico",
   },
 };
 
