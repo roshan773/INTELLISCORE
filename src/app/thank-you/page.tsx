@@ -63,6 +63,13 @@ export default function ThankYouPage() {
 
       {/* Hero Transmission Section */}
       <section className="relative pt-40 pb-28 px-6 md:px-12 bg-gradient-to-b from-brand-olive-dark via-brand-olive-deep to-brand-olive-dark border-b border-brand-cream/10 overflow-hidden">
+        {/* Background Image with Dark Scrim */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center pointer-events-none opacity-25 mix-blend-luminosity"
+          style={{ backgroundImage: "url('/images/hero-contact-bg.jpg')" }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-brand-olive-dark/90 via-brand-olive-dark/60 to-brand-olive-dark pointer-events-none" />
+
         {/* Background Cybernetic Grids & Lights */}
         <div className="absolute inset-0 tech-grid opacity-30 pointer-events-none" />
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-brand-olive/20 blur-[120px] pointer-events-none" />
