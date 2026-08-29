@@ -126,11 +126,6 @@ export default function Footer() {
                   Real-Time Telemetry
                 </Link>
               </li>
-              <li>
-                <Link href="/cases" className="hover:text-brand-cream transition-colors">
-                  Case Studies
-                </Link>
-              </li>
             </ul>
           </div>
 
@@ -146,18 +141,13 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/philosophy" className="hover:text-brand-cream transition-colors">
-                  Our Philosophy
-                </Link>
-              </li>
-              <li>
                 <Link href="/process" className="hover:text-brand-cream transition-colors">
                   Our Process
                 </Link>
               </li>
               <li>
-                <Link href="/insights" className="hover:text-brand-cream transition-colors">
-                  Insights & Intel
+                <Link href="/technology" className="hover:text-brand-cream transition-colors">
+                  Tech Stack
                 </Link>
               </li>
               <li>

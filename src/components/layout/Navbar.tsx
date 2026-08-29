@@ -9,11 +9,8 @@ const navLinks = [
   { name: "About", href: "/about" },
   { name: "Services", href: "/services" },
   { name: "Solutions", href: "/solutions" },
-  { name: "Philosophy", href: "/philosophy" },
   { name: "Process", href: "/process" },
   { name: "Tech Stack", href: "/technology" },
-  { name: "Case Studies", href: "/cases" },
-  { name: "Insights", href: "/insights" },
 ];
 
 export default function Navbar() {
@@ -59,7 +56,7 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Nav Links */}
-          <nav className="hidden lg:flex items-center gap-6">
+          <nav className="hidden lg:flex items-center gap-7">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
