@@ -88,8 +88,13 @@ export default function Hero() {
     <section
       id="hero"
       ref={containerRef}
-      className="relative min-h-screen flex flex-col justify-between pt-36 pb-0 bg-gradient-to-b from-brand-olive-dark via-brand-olive-deep to-brand-olive-dark overflow-hidden"
-    >
+      {/* Background Image with Dark Cyber Gradient Scrim */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center pointer-events-none opacity-30 mix-blend-luminosity"
+        style={{ backgroundImage: "url('/images/hero-main-bg.jpg')" }}
+      />
+      <div className="absolute inset-0 bg-gradient-to-b from-brand-olive-dark/85 via-brand-olive-dark/40 to-brand-olive-dark pointer-events-none" />
+
       {/* Ambient Grid & Radial Lighting */}
       <div className="absolute inset-0 tech-grid opacity-35 pointer-events-none" />
       <div
