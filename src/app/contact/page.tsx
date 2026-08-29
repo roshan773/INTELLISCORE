@@ -6,12 +6,9 @@ import ContactForm from "@/components/ui/ContactForm";
 import {
   Mail,
   ShieldCheck,
-  Clock,
   FileCheck2,
   PhoneCall,
-  CheckCircle2,
   Sparkles,
-  ArrowRight,
 } from "lucide-react";
 
 export const metadata = {
@@ -24,7 +21,7 @@ const discoverySteps = [
   {
     step: "01",
     title: "Submit Requirements or Discovery Brief",
-    desc: "Complete the 2-minute form or email our engineering desk with your architectural goals and current stack.",
+    desc: "Complete the form or email our help desk with your architectural goals and current stack.",
     icon: FileCheck2,
   },
   {
@@ -38,27 +35,6 @@ const discoverySteps = [
     title: "30-Min Architecture Discovery Session",
     desc: "We deliver a customized technical feasibility roadmap, sprint timeline, and cost estimate on a private call.",
     icon: PhoneCall,
-  },
-];
-
-const directChannels = [
-  {
-    title: "Engineering Discovery Desk",
-    email: "contact@intelluscore.io",
-    desc: "For general inquiries, RFPs, and architecture consultations.",
-    sla: "Response within 24 hours",
-  },
-  {
-    title: "Security & Vulnerability Desk",
-    email: "security@intelluscore.io",
-    desc: "For security audits, penetration reports, and emergency incidents.",
-    sla: "Immediate Priority",
-  },
-  {
-    title: "Strategic Partnerships",
-    email: "partners@intelluscore.io",
-    desc: "For co-founding ventures and enterprise integrations.",
-    sla: "48-Hour Response",
   },
 ];
 
@@ -99,7 +75,7 @@ export default function ContactPage() {
       {/* Section 2: Main Interactive Discovery & Form Section */}
       <section className="py-24 px-6 md:px-12 bg-brand-olive-deep">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-          {/* Left Column: What to Expect & Direct Channels */}
+          {/* Left Column: What to Expect & Single Help Desk Card */}
           <div className="lg:col-span-5 space-y-8">
             {/* Guide: What Happens Next */}
             <div className="p-8 rounded-3xl bg-brand-olive-surface border border-brand-cream/20 space-y-6 shadow-2xl">
@@ -116,27 +92,24 @@ export default function ContactPage() {
               </div>
 
               <div className="space-y-4">
-                {discoverySteps.map((step) => {
-                  const Icon = step.icon;
-                  return (
-                    <div
-                      key={step.step}
-                      className="p-4 rounded-2xl bg-brand-olive-dark border border-brand-cream/10 flex items-start gap-4"
-                    >
-                      <div className="w-10 h-10 rounded-full bg-brand-cream text-brand-olive-dark flex items-center justify-center font-display font-bold text-sm shrink-0 shadow-md">
-                        {step.step}
-                      </div>
-                      <div className="space-y-1">
-                        <h3 className="font-display text-lg font-bold text-brand-cream">
-                          {step.title}
-                        </h3>
-                        <p className="text-xs text-brand-cream-muted font-light leading-relaxed">
-                          {step.desc}
-                        </p>
-                      </div>
+                {discoverySteps.map((step) => (
+                  <div
+                    key={step.step}
+                    className="p-4 rounded-2xl bg-brand-olive-dark border border-brand-cream/10 flex items-start gap-4"
+                  >
+                    <div className="w-10 h-10 rounded-full bg-brand-cream text-brand-olive-dark flex items-center justify-center font-display font-bold text-sm shrink-0 shadow-md">
+                      {step.step}
                     </div>
-                  );
-                })}
+                    <div className="space-y-1">
+                      <h3 className="font-display text-lg font-bold text-brand-cream">
+                        {step.title}
+                      </h3>
+                      <p className="text-xs text-brand-cream-muted font-light leading-relaxed">
+                        {step.desc}
+                      </p>
+                    </div>
+                  </div>
+                ))}
               </div>
 
               <div className="pt-4 border-t border-brand-cream/10 flex items-center gap-2 text-xs font-mono text-brand-olive-light font-bold">
@@ -145,45 +118,38 @@ export default function ContactPage() {
               </div>
             </div>
 
-            {/* Direct Communication Channels */}
+            {/* Single Unified Help Desk Email Card */}
             <div className="p-8 rounded-3xl bg-brand-olive-surface border border-brand-cream/20 space-y-5 shadow-2xl">
               <div className="space-y-1">
                 <div className="text-xs font-mono text-brand-olive-light uppercase tracking-widest font-bold">
-                  // PREFER DIRECT EMAIL?
+                  // DIRECT HELP DESK
                 </div>
                 <h3 className="font-display text-2xl font-bold text-brand-cream">
-                  Direct Inboxes
+                  Email Us Directly
                 </h3>
               </div>
 
-              <div className="space-y-3">
-                {directChannels.map((channel, idx) => (
-                  <div
-                    key={idx}
-                    className="p-4 rounded-xl bg-brand-olive-dark border border-brand-cream/10 space-y-1.5"
-                  >
-                    <div className="flex items-center justify-between">
-                      <span className="font-display text-base font-bold text-brand-cream">
-                        {channel.title}
-                      </span>
-                      <span className="text-[10px] font-mono text-brand-olive-light font-bold">
-                        {channel.sla}
-                      </span>
-                    </div>
+              <div className="p-5 rounded-2xl bg-brand-olive-dark border border-brand-cream/15 space-y-3 shadow-lg">
+                <div className="flex items-center justify-between">
+                  <span className="font-display text-lg font-bold text-brand-cream">
+                    Official Help & Inquiry Desk
+                  </span>
+                  <span className="text-[10px] font-mono text-brand-olive-light bg-brand-olive-surface px-2.5 py-1 rounded-full border border-brand-cream/10 font-bold">
+                    Within 24 Hours
+                  </span>
+                </div>
 
-                    <a
-                      href={`mailto:${channel.email}`}
-                      className="flex items-center gap-2 text-xs font-mono text-brand-cream font-bold hover:underline"
-                    >
-                      <Mail className="w-3.5 h-3.5 text-brand-olive-light" />
-                      <span>{channel.email}</span>
-                    </a>
+                <a
+                  href="mailto:contact@intelluscore.io"
+                  className="flex items-center gap-2.5 text-sm font-mono text-brand-cream font-bold hover:underline"
+                >
+                  <Mail className="w-4 h-4 text-brand-olive-light" />
+                  <span>contact@intelluscore.io</span>
+                </a>
 
-                    <p className="text-[11px] text-brand-cream-muted font-light">
-                      {channel.desc}
-                    </p>
-                  </div>
-                ))}
+                <p className="text-xs text-brand-cream-muted font-light leading-relaxed">
+                  For technical discovery, RFPs, architecture questions, and general inquiries.
+                </p>
               </div>
             </div>
           </div>
