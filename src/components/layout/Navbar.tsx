@@ -36,8 +36,8 @@ export default function Navbar() {
       <div className="fixed top-6 left-0 right-0 z-50 flex justify-center px-4 sm:px-6 pointer-events-none">
         <header
           className={`pointer-events-auto transition-all duration-500 rounded-full flex items-center justify-between px-4 sm:px-6 py-2.5 max-w-5xl w-full ${isScrolled
-              ? "glass-island shadow-2xl shadow-black/80 border-brand-cream/25"
-              : "bg-brand-olive-deep/70 backdrop-blur-md border border-brand-cream/15"
+            ? "glass-island shadow-2xl shadow-black/80 border-brand-cream/25"
+            : "bg-brand-olive-deep/70 backdrop-blur-md border border-brand-cream/15"
             }`}
         >
           {/* Brand Wordmark & Emblem */}
@@ -47,7 +47,7 @@ export default function Navbar() {
             aria-label="INTELLUSCORE Home"
           >
             <div className="w-8 h-8 rounded-full bg-brand-cream flex items-center justify-center text-brand-olive-dark font-display font-black text-sm group-hover:rotate-45 transition-transform duration-300">
-              IS
+              IC
             </div>
             <span className="font-display text-xl sm:text-2xl font-bold tracking-wider text-brand-cream">
               INTELLUS<span className="text-brand-olive-light">CORE</span>
@@ -93,8 +93,8 @@ export default function Navbar() {
       {/* Mobile Drawer */}
       <div
         className={`fixed inset-0 z-40 bg-brand-olive-dark/98 backdrop-blur-2xl lg:hidden transition-all duration-500 flex flex-col justify-between p-8 pt-32 ${mobileMenuOpen
-            ? "opacity-100 pointer-events-auto translate-y-0"
-            : "opacity-0 pointer-events-none -translate-y-6"
+          ? "opacity-100 pointer-events-auto translate-y-0"
+          : "opacity-0 pointer-events-none -translate-y-6"
           }`}
       >
         <div className="flex flex-col gap-6 max-w-md mx-auto w-full">
