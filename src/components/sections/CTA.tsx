@@ -3,8 +3,6 @@
 import React, { useState } from "react";
 import { ArrowRight, CheckCircle2, ShieldCheck, AlertCircle } from "lucide-react";
 
-const WEB3FORMS_ACCESS_KEY = "3d398c30-6ab1-4d12-a992-85dbd252b1ae";
-
 export default function CTA() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -22,33 +20,29 @@ export default function CTA() {
     setErrorMessage("");
 
     try {
-      const response = await fetch("https://api.web3forms.com/submit", {
+      const response = await fetch("/api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Accept: "application/json",
         },
         body: JSON.stringify({
-          access_key: WEB3FORMS_ACCESS_KEY,
           name: formState.name,
           email: formState.email,
           service: formState.service,
           message: formState.message,
-          subject: `New Discovery Request from ${formState.name} [INTELLUSCORE Homepage]`,
-          from_name: "INTELLUSCORE Platform",
+          source: "homepage-cta",
         }),
       });
 
       const result = await response.json();
 
-      if (result.success || response.ok) {
+      if (response.ok && result.success) {
         setSubmitted(true);
       } else {
-        setErrorMessage(result.message || "Failed to transmit inquiry. Please try again.");
+        setErrorMessage(result.message || "Unable to complete request. Please try again later.");
       }
-    } catch (err) {
-      console.error("Web3Forms submission error:", err);
-      setSubmitted(true);
+    } catch {
+      setErrorMessage("Network connectivity issue. Please try again later.");
     } finally {
       setLoading(false);
     }
@@ -120,8 +114,6 @@ export default function CTA() {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-5">
-                  <input type="hidden" name="access_key" value={WEB3FORMS_ACCESS_KEY} />
-
                   <div className="font-display text-3xl font-bold text-brand-cream mb-2">
                     Initiate Technical Discovery
                   </div>

@@ -3,8 +3,6 @@
 import React, { useState } from "react";
 import { CheckCircle2 } from "lucide-react";
 
-const WEB3FORMS_ACCESS_KEY = "3d398c30-6ab1-4d12-a992-85dbd252b1ae";
-
 export default function NewsletterForm() {
   const [subscribed, setSubscribed] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -16,23 +14,22 @@ export default function NewsletterForm() {
     setLoading(true);
 
     try {
-      await fetch("https://api.web3forms.com/submit", {
+      const response = await fetch("/api/newsletter", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Accept: "application/json",
         },
         body: JSON.stringify({
-          access_key: WEB3FORMS_ACCESS_KEY,
           email: email,
-          subject: `New Executive Briefing Subscriber: ${email} [INTELLUSCORE]`,
-          from_name: "INTELLUSCORE Platform",
+          source: "briefing-section",
         }),
       });
-      setSubscribed(true);
-    } catch (err) {
-      console.error("Web3Forms subscription error:", err);
-      setSubscribed(true);
+
+      if (response.ok) {
+        setSubscribed(true);
+      }
+    } catch {
+      // Graceful error fallback
     } finally {
       setLoading(false);
     }
@@ -49,7 +46,6 @@ export default function NewsletterForm() {
 
   return (
     <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row items-center gap-3 max-w-md mx-auto pt-4">
-      <input type="hidden" name="access_key" value={WEB3FORMS_ACCESS_KEY} />
       <input
         type="email"
         name="email"
