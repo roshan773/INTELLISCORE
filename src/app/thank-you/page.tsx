@@ -15,15 +15,15 @@ import {
   Code2,
 } from "lucide-react";
 
-export const metadata = {
+import { constructMetadata } from "@/lib/seo";
+
+export const metadata = constructMetadata({
   title: "Transmission Received",
   description:
     "Your discovery inquiry has been securely transmitted. An INTELLUSCORE principal systems architect is reviewing your technical brief.",
-  robots: {
-    index: false,
-    follow: false,
-  },
-};
+  path: "/thank-you",
+  noIndex: true,
+});
 
 const protocolSteps = [
   {

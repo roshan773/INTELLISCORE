@@ -113,12 +113,11 @@ export default function Hero() {
             {/* Pill Tag */}
             <div className="hero-badge-pill inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-brand-olive-surface border border-brand-cream/20 text-brand-cream text-xs font-mono tracking-widest uppercase mb-6 shadow-md">
               <span className="w-2 h-2 rounded-full bg-brand-cream animate-ping" />
-              <span>INTELLUSCORE • DIGITAL ENGINEERING & AI</span>
+              <span>TECHNOLOGY • AUTOMATION • SECURITY</span>
             </div>
 
             {/* Giant Display Title */}
             <h1 className="font-display text-6xl sm:text-7xl md:text-8xl xl:text-[9.5rem] font-bold uppercase tracking-tight text-brand-cream leading-[0.85] mb-8">
-              <span className="sr-only">INTELLUSCORE — Enterprise Web Development, AI Automation & Cybersecurity. </span>
               <span className="hero-headline-word block">
                 BUILD<span className="text-brand-olive-light">.</span>
               </span>
@@ -132,7 +131,8 @@ export default function Hero() {
 
             {/* Supporting Copy */}
             <p className="hero-paragraph text-base sm:text-lg md:text-xl text-brand-cream-muted font-light max-w-xl leading-relaxed mb-10 border-l-2 border-brand-cream/30 pl-5">
-              <strong className="text-brand-cream font-semibold">INTELLUSCORE</strong> engineers high-performance web platforms, orchestrates autonomous AI multi-agent workflows, and fortifies mission-critical cybersecurity architectures for modern enterprises.
+              We engineer high-performance web platforms, orchestrate autonomous AI multi-agent workflows,
+              and fortify the mission-critical systems that drive modern market leaders.
             </p>
 
             {/* CTA Group */}

@@ -5,6 +5,7 @@ import SmoothScroll from "@/components/layout/SmoothScroll";
 import FuturisticLoader from "@/components/ui/FuturisticLoader";
 import ScrollCanvas from "@/components/3d/ScrollCanvas";
 import JsonLd from "@/components/seo/JsonLd";
+import { SITE_CONFIG } from "@/lib/seo";
 
 const plusJakarta = Plus_Jakarta_Sans({
   variable: "--font-body-custom",
@@ -24,40 +25,28 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
-  themeColor: "#556B2F",
+  themeColor: SITE_CONFIG.themeColor,
 };
 
-const siteUrl = "https://intelluscore.vercel.app";
-
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
+  metadataBase: new URL(SITE_CONFIG.siteUrl),
   title: {
-    default: "INTELLUSCORE — BUILD. AUTOMATE. SECURE.",
-    template: "%s | INTELLUSCORE",
+    default: SITE_CONFIG.title,
+    template: `%s | ${SITE_CONFIG.name}`,
   },
-  description:
-    "INTELLUSCORE (https://intelluscore.vercel.app) is an elite technology studio building next-generation web platforms, autonomous AI workflow automation pipelines, and zero-trust cybersecurity architectures.",
-  applicationName: "INTELLUSCORE",
-  authors: [{ name: "INTELLUSCORE", url: siteUrl }],
-  creator: "INTELLUSCORE",
-  publisher: "INTELLUSCORE",
+  description: SITE_CONFIG.description,
+  applicationName: SITE_CONFIG.name,
+  authors: [{ name: SITE_CONFIG.name, url: SITE_CONFIG.siteUrl }],
+  creator: SITE_CONFIG.name,
+  publisher: SITE_CONFIG.name,
   keywords: [
-    "intelluscore",
     "INTELLUSCORE",
-    "intelluscore.vercel.app",
-    "https://intelluscore.vercel.app",
-    "intelluscore official",
-    "INTELLISCORE",
-    "Intelluscore AI",
-    "Intelluscore Web Development",
-    "Intelluscore Cybersecurity",
-    "AI Automation Agency",
-    "Enterprise Web Development",
-    "Autonomous AI Agents",
-    "Zero-Trust Cybersecurity",
+    "Web Architecture",
+    "AI Automation",
+    "Cybersecurity",
     "Custom Software Engineering",
     "Digital Transformation",
-    "Next.js Development Agency",
+    "Next.js Development",
     "Cloud Architecture",
   ],
   alternates: {
@@ -65,28 +54,24 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    locale: "en_US",
-    url: siteUrl,
-    siteName: "INTELLUSCORE",
-    title: "INTELLUSCORE — BUILD. AUTOMATE. SECURE.",
-    description:
-      "We build intelligent digital experiences, automate complex workflows, and secure the technology that powers modern businesses. Specializing in Web Architecture, AI Automation, and Cybersecurity.",
+    locale: SITE_CONFIG.locale,
+    url: SITE_CONFIG.siteUrl,
+    siteName: SITE_CONFIG.name,
+    title: SITE_CONFIG.title,
+    description: SITE_CONFIG.description,
     images: [
       {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "INTELLUSCORE — BUILD. AUTOMATE. SECURE.",
+        alt: SITE_CONFIG.title,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    site: "@intelluscore",
-    creator: "@intelluscore",
-    title: "INTELLUSCORE — BUILD. AUTOMATE. SECURE.",
-    description:
-      "Enterprise Web Engineering, Autonomous AI Workflow Automation & Zero-Trust Cybersecurity Architectures.",
+    title: SITE_CONFIG.title,
+    description: SITE_CONFIG.description,
     images: ["/opengraph-image"],
   },
   robots: {

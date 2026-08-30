@@ -17,20 +17,14 @@ import {
   Layers,
 } from "lucide-react";
 
-export const metadata = {
+import { constructMetadata } from "@/lib/seo";
+
+export const metadata = constructMetadata({
   title: "Core Services — Web Architecture, AI Automation & Cyber Defense",
   description:
     "Explore INTELLUSCORE's specialized services in modern web platform engineering, autonomous AI agent pipelines, zero-trust cybersecurity, and custom enterprise software.",
-  alternates: {
-    canonical: "/services",
-  },
-  openGraph: {
-    title: "Core Services — INTELLUSCORE",
-    description:
-      "Enterprise Web Engineering, AI Automation Pipelines, and Zero-Trust Cybersecurity Audits.",
-    url: "https://intelluscore.vercel.app/services",
-  },
-};
+  path: "/services",
+});
 
 const serviceDeepDives = [
   {

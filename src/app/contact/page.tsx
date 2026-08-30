@@ -10,21 +10,14 @@ import {
   PhoneCall,
   Sparkles,
 } from "lucide-react";
+import { constructMetadata } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = constructMetadata({
   title: "Contact & Technical Discovery Briefing",
   description:
     "Initiate an enterprise technical discovery consultation with INTELLUSCORE principal systems architects, AI engineers, and cybersecurity consultants.",
-  alternates: {
-    canonical: "/contact",
-  },
-  openGraph: {
-    title: "Schedule Technical Discovery — INTELLUSCORE",
-    description:
-      "Direct technical consultation desk with INTELLUSCORE principal software architects and cybersecurity engineers.",
-    url: "https://intelluscore.vercel.app/contact",
-  },
-};
+  path: "/contact",
+});
 
 const discoverySteps = [
   {

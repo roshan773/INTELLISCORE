@@ -1,15 +1,15 @@
 import { MetadataRoute } from "next";
+import { SITE_CONFIG } from "@/lib/seo";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "INTELLUSCORE — Engineering, AI & Cybersecurity",
-    short_name: "INTELLUSCORE",
-    description:
-      "Enterprise Web Engineering, Autonomous AI Pipelines, and Zero-Trust Cybersecurity Architectures.",
+    name: SITE_CONFIG.name,
+    short_name: SITE_CONFIG.name,
+    description: SITE_CONFIG.description,
     start_url: "/",
     display: "standalone",
-    background_color: "#121A0D",
-    theme_color: "#556B2F",
+    background_color: SITE_CONFIG.backgroundColor,
+    theme_color: SITE_CONFIG.themeColor,
     icons: [
       {
         src: "/favicon.ico",
@@ -17,7 +17,6 @@ export default function manifest(): MetadataRoute.Manifest {
         type: "image/x-icon",
       },
     ],
-    categories: ["business", "technology", "productivity", "utilities"],
     lang: "en-US",
   };
 }

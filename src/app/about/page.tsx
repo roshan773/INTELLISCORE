@@ -17,20 +17,14 @@ import {
   Layers,
 } from "lucide-react";
 
-export const metadata = {
+import { constructMetadata } from "@/lib/seo";
+
+export const metadata = constructMetadata({
   title: "About Us — Engineering, AI & Cybersecurity Leadership",
   description:
     "Learn about INTELLUSCORE's founding vision, engineering leadership, and global standards for building resilient, high-speed digital systems and autonomous AI pipelines.",
-  alternates: {
-    canonical: "/about",
-  },
-  openGraph: {
-    title: "About INTELLUSCORE — Engineering Without Compromise",
-    description:
-      "Learn about INTELLUSCORE's founding vision, leadership team, and global distributed engineering studios.",
-    url: "https://intelluscore.vercel.app/about",
-  },
-};
+  path: "/about",
+});
 
 const leadership = [
   {

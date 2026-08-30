@@ -1,52 +1,24 @@
 import { MetadataRoute } from "next";
-
-const siteUrl = "https://intelluscore.vercel.app";
+import { SITE_CONFIG } from "@/lib/seo";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const currentDate = new Date();
+  const baseUrl = SITE_CONFIG.siteUrl;
 
-  return [
-    {
-      url: `${siteUrl}`,
-      lastModified: currentDate,
-      changeFrequency: "weekly",
-      priority: 1.0,
-    },
-    {
-      url: `${siteUrl}/about`,
-      lastModified: currentDate,
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: `${siteUrl}/services`,
-      lastModified: currentDate,
-      changeFrequency: "weekly",
-      priority: 0.95,
-    },
-    {
-      url: `${siteUrl}/solutions`,
-      lastModified: currentDate,
-      changeFrequency: "weekly",
-      priority: 0.95,
-    },
-    {
-      url: `${siteUrl}/process`,
-      lastModified: currentDate,
-      changeFrequency: "monthly",
-      priority: 0.85,
-    },
-    {
-      url: `${siteUrl}/technology`,
-      lastModified: currentDate,
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: `${siteUrl}/contact`,
-      lastModified: currentDate,
-      changeFrequency: "monthly",
-      priority: 0.85,
-    },
+  const routes = [
+    { path: "", priority: 1.0, changeFrequency: "weekly" as const },
+    { path: "/about", priority: 0.9, changeFrequency: "monthly" as const },
+    { path: "/services", priority: 0.9, changeFrequency: "weekly" as const },
+    { path: "/solutions", priority: 0.9, changeFrequency: "weekly" as const },
+    { path: "/process", priority: 0.85, changeFrequency: "monthly" as const },
+    { path: "/technology", priority: 0.85, changeFrequency: "monthly" as const },
+    { path: "/contact", priority: 0.85, changeFrequency: "monthly" as const },
   ];
+
+  return routes.map((route) => ({
+    url: `${baseUrl}${route.path}`,
+    lastModified: currentDate,
+    changeFrequency: route.changeFrequency,
+    priority: route.priority,
+  }));
 }

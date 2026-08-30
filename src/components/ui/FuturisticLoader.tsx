@@ -159,9 +159,9 @@ export default function FuturisticLoader() {
 
         {/* Brand Title */}
         <div className="space-y-1.5">
-          <h1 className="font-display text-4xl sm:text-5xl md:text-6xl font-bold tracking-wider text-brand-cream uppercase">
+          <div className="font-display text-4xl sm:text-5xl md:text-6xl font-bold tracking-wider text-brand-cream uppercase">
             INTELLUS<span className="text-brand-olive-light">CORE</span>
-          </h1>
+          </div>
           <p className="text-[11px] sm:text-xs font-mono text-brand-cream-muted uppercase tracking-widest">
             BUILD // AUTOMATE // SECURE
           </p>

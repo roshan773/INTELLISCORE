@@ -1,27 +1,13 @@
 import { MetadataRoute } from "next";
+import { SITE_CONFIG } from "@/lib/seo";
 
 export default function robots(): MetadataRoute.Robots {
-  const siteUrl = "https://intelluscore.vercel.app";
+  const siteUrl = SITE_CONFIG.siteUrl;
 
   return {
     rules: [
       {
         userAgent: "*",
-        allow: "/",
-        disallow: ["/api/", "/thank-you"],
-      },
-      {
-        userAgent: "Googlebot",
-        allow: "/",
-        disallow: ["/api/", "/thank-you"],
-      },
-      {
-        userAgent: "Bingbot",
-        allow: "/",
-        disallow: ["/api/", "/thank-you"],
-      },
-      {
-        userAgent: "Applebot",
         allow: "/",
         disallow: ["/api/", "/thank-you"],
       },

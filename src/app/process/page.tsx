@@ -18,20 +18,14 @@ import {
   Layers,
 } from "lucide-react";
 
-export const metadata = {
+import { constructMetadata } from "@/lib/seo";
+
+export const metadata = constructMetadata({
   title: "Engineering Process — 7-Stage Sprint Methodology",
   description:
     "Explore INTELLUSCORE's rigorous 7-stage engineering journey from technical discovery to global scaling and continuous security monitoring.",
-  alternates: {
-    canonical: "/process",
-  },
-  openGraph: {
-    title: "Engineering Methodology & Process — INTELLUSCORE",
-    description:
-      "Our systematic 7-stage lifecycle: Discovery, Architecture, Prototype, Security Hardening, Production Deployment, and 24/7 Operations.",
-    url: "https://intelluscore.vercel.app/process",
-  },
-};
+  path: "/process",
+});
 
 const fullProcess = [
   {
