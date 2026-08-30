@@ -98,7 +98,7 @@ export default function Technology() {
           </h2>
           <p className="text-brand-cream-muted text-base sm:text-lg font-light">
             An interconnected network of modern frameworks, AI infrastructure, and cybersecurity defenses
-            orchestrated around the INTELLISCORE core engine.
+            orchestrated around the INTELLUSCORE core engine.
           </p>
         </div>
 
@@ -189,7 +189,7 @@ export default function Technology() {
               <div className="mt-8 pt-6 border-t border-brand-cream/15 flex items-center justify-between text-xs font-mono text-brand-cream-muted">
                 <span>ORCHESTRATED BY:</span>
                 <span className="text-brand-cream font-bold font-display text-base tracking-wider">
-                  INTELLISCORE CORE
+                  INTELLUSCORE CORE
                 </span>
               </div>
             </div>

@@ -90,7 +90,7 @@ export default function Process() {
             </span>
           </div>
           <h2 className="font-display text-5xl sm:text-7xl md:text-8xl font-bold uppercase text-brand-cream tracking-tight leading-[0.88]">
-            THE INTELLISCORE <br />
+            THE INTELLUSCORE <br />
             <span className="text-brand-olive-light">ENGINEERING JOURNEY.</span>
           </h2>
         </div>

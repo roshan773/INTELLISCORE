@@ -38,7 +38,7 @@ export default function WhyUs() {
         <div className="mb-20 text-center max-w-4xl mx-auto">
           <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-brand-olive-surface border border-brand-cream/20 text-brand-cream text-xs font-mono tracking-widest uppercase mb-6">
             <span className="w-1.5 h-1.5 rounded-full bg-brand-cream animate-pulse" />
-            <span>// THE INTELLISCORE PHILOSOPHY</span>
+            <span>// THE INTELLUSCORE PHILOSOPHY</span>
           </div>
 
           <h2 className="font-display text-5xl sm:text-7xl md:text-8xl font-bold uppercase text-brand-cream tracking-tight leading-[0.88] mb-6">
@@ -47,7 +47,7 @@ export default function WhyUs() {
           </h2>
 
           <p className="text-brand-cream-muted text-base sm:text-lg font-light leading-relaxed">
-            In an era of generic code and off-the-shelf templates, INTELLISCORE engineers customized
+            In an era of generic code and off-the-shelf templates, INTELLUSCORE engineers customized
             digital supremacy designed to outperform competitors in speed, intelligence, and resilience.
           </p>
         </div>
@@ -151,7 +151,7 @@ export default function WhyUs() {
 
             {/* Bottom code snippet box */}
             <div className="relative z-10 mt-8 p-4 rounded-xl bg-brand-olive-dark border border-brand-cream/15 font-mono text-[11px] text-brand-cream space-y-1">
-              <div className="text-brand-olive-light font-bold">// INTELLISCORE Deployment Guard</div>
+              <div className="text-brand-olive-light font-bold">// INTELLUSCORE Deployment Guard</div>
               <div className="text-brand-cream-muted">
                 &gt; verifyArchitecture(productionSpec);
               </div>

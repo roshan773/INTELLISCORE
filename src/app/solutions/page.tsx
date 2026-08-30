@@ -67,27 +67,27 @@ const comparisonTable = [
   {
     feature: "Architecture Style",
     legacy: "Monolithic & Fragile Dependencies",
-    intelliscore: "Modular Microservices & Edge-Native",
+    intelluscore: "Modular Microservices & Edge-Native",
   },
   {
     feature: "AI Integration",
     legacy: "Basic Chatbot Prompts",
-    intelliscore: "Autonomous Multi-Agent Deterministic Workflows",
+    intelluscore: "Autonomous Multi-Agent Deterministic Workflows",
   },
   {
     feature: "Cybersecurity Posture",
     legacy: "Reactive Patching & Perimeter Firewall",
-    intelliscore: "Proactive Zero-Trust, Continuous Red-Team & SAST/DAST",
+    intelluscore: "Proactive Zero-Trust, Continuous Red-Team & SAST/DAST",
   },
   {
     feature: "Page Load Speed",
     legacy: "2.5s – 5.0s (High Bounce Rate)",
-    intelliscore: "Sub-500ms Edge Delivery (100/100 Lighthouse)",
+    intelluscore: "Sub-500ms Edge Delivery (100/100 Lighthouse)",
   },
   {
     feature: "Code Ownership",
     legacy: "Vendor Lock-in & Proprietary Black Boxes",
-    intelliscore: "100% Full Client Source Code Ownership",
+    intelluscore: "100% Full Client Source Code Ownership",
   },
 ];
 
@@ -233,7 +233,7 @@ export default function SolutionsPage() {
                       <td className="p-6 font-medium text-brand-cream bg-brand-olive/10">
                         <div className="flex items-center gap-2">
                           <CheckCircle2 className="w-4 h-4 text-brand-olive-light shrink-0" />
-                          <span>{row.intelliscore}</span>
+                          <span>{row.intelluscore}</span>
                         </div>
                       </td>
                     </tr>

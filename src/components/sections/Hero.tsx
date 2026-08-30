@@ -12,7 +12,7 @@ const tickerItems = [
   "DISTRIBUTED CLOUD SYSTEMS",
   "ENTERPRISE LLM INTEGRATION",
   "CONTINUOUS THREAT MONITORING",
-  "INTELLISCORE ENGINEERING",
+  "INTELLUSCORE ENGINEERING",
   "SUB-SECOND EDGE DELIVERY",
 ];
 
@@ -184,7 +184,7 @@ export default function Hero() {
                 <div className="flex items-center gap-2">
                   <span className="w-2.5 h-2.5 rounded-full bg-brand-cream" />
                   <span className="font-mono text-xs text-brand-cream uppercase font-bold tracking-wider">
-                    INTELLISCORE_OS // V2.4
+                    INTELLUSCORE_OS // V2.4
                   </span>
                 </div>
                 <span className="text-[10px] font-mono text-brand-cream-muted uppercase bg-brand-olive-dark px-3 py-1 rounded-full border border-brand-cream/15 font-bold">

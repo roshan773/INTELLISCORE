@@ -7,7 +7,7 @@ import "server-only";
  */
 
 function getPrivateApiKey(): string {
-  const apiKey = process.env.INTELLISCORE_PRIVATE_API_KEY;
+  const apiKey = process.env.INTELLUSCORE_PRIVATE_API_KEY || process.env.INTELLISCORE_PRIVATE_API_KEY;
   if (!apiKey || typeof apiKey !== "string" || apiKey.trim() === "") {
     throw new Error("Server configuration error: Service integration unavailable.");
   }

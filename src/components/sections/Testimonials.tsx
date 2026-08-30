@@ -6,7 +6,7 @@ import { Quote, ChevronLeft, ChevronRight, Star } from "lucide-react";
 const testimonials = [
   {
     quote:
-      "INTELLISCORE completely restructured our enterprise architecture. Their team delivered an ultra-secure, AI-augmented trading platform that exceeded every performance metric we gave them. Truly a rare breed of elite engineers.",
+      "INTELLUSCORE completely restructured our enterprise architecture. Their team delivered an ultra-secure, AI-augmented trading platform that exceeded every performance metric we gave them. Truly a rare breed of elite engineers.",
     author: "Alexander Vance",
     position: "Chief Technology Officer",
     company: "Apex Capital Systems",
@@ -14,7 +14,7 @@ const testimonials = [
   },
   {
     quote:
-      "The custom AI automation pipelines built by INTELLISCORE replaced weeks of repetitive manual document sorting with an instantaneous automated workflow. Our operational efficiency jumped tenfold in under a month.",
+      "The custom AI automation pipelines built by INTELLUSCORE replaced weeks of repetitive manual document sorting with an instantaneous automated workflow. Our operational efficiency jumped tenfold in under a month.",
     author: "Elena Rostova",
     position: "VP of Digital Operations",
     company: "Nexus Global Supply",
@@ -22,7 +22,7 @@ const testimonials = [
   },
   {
     quote:
-      "Finding a partner who understands both bleeding-edge frontend engineering and rigorous zero-trust cybersecurity is almost impossible. INTELLISCORE provided both with uncompromising precision.",
+      "Finding a partner who understands both bleeding-edge frontend engineering and rigorous zero-trust cybersecurity is almost impossible. INTELLUSCORE provided both with uncompromising precision.",
     author: "Marcus Thorne",
     position: "Head of Engineering",
     company: "BioSync Diagnostics",

@@ -69,7 +69,7 @@ export default function Cybersecurity() {
           </h2>
 
           <p className="text-brand-cream-muted text-base sm:text-lg font-light leading-relaxed">
-            Every digital platform built by INTELLISCORE is engineered with offensive defense in mind.
+            Every digital platform built by INTELLUSCORE is engineered with offensive defense in mind.
             We ensure your enterprise assets remain fortified against evolving global attack vectors.
           </p>
         </div>
@@ -78,7 +78,7 @@ export default function Cybersecurity() {
         <div className="mb-16 rounded-3xl overflow-hidden border border-brand-cream/20 relative aspect-[21/9] shadow-2xl">
           <Image
             src="/images/cyber-shield.jpg"
-            alt="INTELLISCORE Zero-Trust Cyber Vault Defense"
+            alt="INTELLUSCORE Zero-Trust Cyber Vault Defense"
             fill
             className="object-cover"
           />
@@ -126,7 +126,7 @@ export default function Cybersecurity() {
 
                 <div className="mt-8 pt-4 border-t border-brand-cream/10 flex items-center gap-2 text-xs font-mono text-brand-cream/60">
                   <CheckCircle2 className="w-4 h-4 text-brand-olive-light" />
-                  <span>INTELLISCORE FORTIFIED</span>
+                  <span>INTELLUSCORE FORTIFIED</span>
                 </div>
               </div>
             );
