@@ -31,7 +31,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_CONFIG.siteUrl),
   verification: {
-    google: "u56t7ht2xQY39G7SogTiMdOuSludt8sn54ZGgAH-3_Q",
+    google: "75jXSVzdmm5Rfxq-lGZauy9AvdhKDeG2XMxHliOoYsg",
   },
   title: {
     default: SITE_CONFIG.title,
