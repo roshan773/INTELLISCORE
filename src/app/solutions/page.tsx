@@ -18,9 +18,18 @@ import {
 } from "lucide-react";
 
 export const metadata = {
-  title: "Enterprise Solutions — INTELLUSCORE | AI, Cloud & Security Architectures",
+  title: "Enterprise Solutions — AI Automation, Cloud Vaults & Multi-Agent Systems",
   description:
     "Discover INTELLUSCORE's enterprise-grade solutions across autonomous workflow automation, zero-trust cloud vaults, and real-time data streaming architectures.",
+  alternates: {
+    canonical: "/solutions",
+  },
+  openGraph: {
+    title: "Enterprise Solutions — INTELLUSCORE",
+    description:
+      "Autonomous Multi-Agent AI Systems, Cloud Security Vaults, and High-Speed Real-Time Analytics.",
+    url: "https://intelluscore.vercel.app/solutions",
+  },
 };
 
 const solutionsList = [

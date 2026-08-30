@@ -19,9 +19,18 @@ import {
 } from "lucide-react";
 
 export const metadata = {
-  title: "Engineering Process — INTELLUSCORE | 7-Stage Methodology",
+  title: "Engineering Process — 7-Stage Sprint Methodology",
   description:
-    "Explore INTELLUSCORE's rigorous 7-stage engineering journey from technical discovery to global scaling and continuous security.",
+    "Explore INTELLUSCORE's rigorous 7-stage engineering journey from technical discovery to global scaling and continuous security monitoring.",
+  alternates: {
+    canonical: "/process",
+  },
+  openGraph: {
+    title: "Engineering Methodology & Process — INTELLUSCORE",
+    description:
+      "Our systematic 7-stage lifecycle: Discovery, Architecture, Prototype, Security Hardening, Production Deployment, and 24/7 Operations.",
+    url: "https://intelluscore.vercel.app/process",
+  },
 };
 
 const fullProcess = [

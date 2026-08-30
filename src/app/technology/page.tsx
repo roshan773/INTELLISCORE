@@ -18,9 +18,18 @@ import {
 } from "lucide-react";
 
 export const metadata = {
-  title: "Technology Stack — INTELLUSCORE | Modern Frameworks & Infrastructure",
+  title: "Technology Stack — Next.js, AI Models & Zero-Trust Infrastructure",
   description:
-    "Explore INTELLUSCORE's production technology stack across Next.js, AI LLM agents, Zero-Trust cryptography, and distributed cloud computing.",
+    "Explore INTELLUSCORE's production technology stack across Next.js, AI LLM agents, Zero-Trust cryptography, and distributed cloud computing infrastructure.",
+  alternates: {
+    canonical: "/technology",
+  },
+  openGraph: {
+    title: "Production Technology Stack — INTELLUSCORE",
+    description:
+      "Enterprise framework standards, AI agent tooling, and cryptographic security primitives.",
+    url: "https://intelluscore.vercel.app/technology",
+  },
 };
 
 const techCategories = [

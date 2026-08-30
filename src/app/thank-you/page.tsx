@@ -16,9 +16,13 @@ import {
 } from "lucide-react";
 
 export const metadata = {
-  title: "Transmission Received — INTELLUSCORE",
+  title: "Transmission Received",
   description:
     "Your discovery inquiry has been securely transmitted. An INTELLUSCORE principal systems architect is reviewing your technical brief.",
+  robots: {
+    index: false,
+    follow: false,
+  },
 };
 
 const protocolSteps = [

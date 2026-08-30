@@ -4,6 +4,7 @@ import "./globals.css";
 import SmoothScroll from "@/components/layout/SmoothScroll";
 import FuturisticLoader from "@/components/ui/FuturisticLoader";
 import ScrollCanvas from "@/components/3d/ScrollCanvas";
+import JsonLd from "@/components/seo/JsonLd";
 
 const plusJakarta = Plus_Jakarta_Sans({
   variable: "--font-body-custom",
@@ -26,26 +27,85 @@ export const viewport: Viewport = {
   themeColor: "#556B2F",
 };
 
+const siteUrl = "https://intelluscore.vercel.app";
+
 export const metadata: Metadata = {
-  title: "INTELLUSCORE — BUILD. AUTOMATE. SECURE.",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: "INTELLUSCORE — BUILD. AUTOMATE. SECURE.",
+    template: "%s | INTELLUSCORE",
+  },
   description:
-    "We build intelligent digital experiences, automate complex workflows, and secure the technology that powers modern businesses. Specializing in Web Development, AI Automation, Custom Software, and Cybersecurity.",
+    "INTELLUSCORE (https://intelluscore.vercel.app) is an elite technology studio building next-generation web platforms, autonomous AI workflow automation pipelines, and zero-trust cybersecurity architectures.",
+  applicationName: "INTELLUSCORE",
+  authors: [{ name: "INTELLUSCORE", url: siteUrl }],
+  creator: "INTELLUSCORE",
+  publisher: "INTELLUSCORE",
   keywords: [
+    "intelluscore",
     "INTELLUSCORE",
-    "Web Development",
-    "AI Automation",
-    "Cybersecurity",
+    "intelluscore.vercel.app",
+    "https://intelluscore.vercel.app",
+    "intelluscore official",
+    "INTELLISCORE",
+    "Intelluscore AI",
+    "Intelluscore Web Development",
+    "Intelluscore Cybersecurity",
+    "AI Automation Agency",
+    "Enterprise Web Development",
+    "Autonomous AI Agents",
+    "Zero-Trust Cybersecurity",
     "Custom Software Engineering",
     "Digital Transformation",
+    "Next.js Development Agency",
+    "Cloud Architecture",
   ],
-  authors: [{ name: "INTELLUSCORE" }],
-  icons: {
-    icon: [
-      { url: "/favicon.ico", sizes: "any" },
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: siteUrl,
+    siteName: "INTELLUSCORE",
+    title: "INTELLUSCORE — BUILD. AUTOMATE. SECURE.",
+    description:
+      "We build intelligent digital experiences, automate complex workflows, and secure the technology that powers modern businesses. Specializing in Web Architecture, AI Automation, and Cybersecurity.",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "INTELLUSCORE — BUILD. AUTOMATE. SECURE.",
+      },
     ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@intelluscore",
+    creator: "@intelluscore",
+    title: "INTELLUSCORE — BUILD. AUTOMATE. SECURE.",
+    description:
+      "Enterprise Web Engineering, Autonomous AI Workflow Automation & Zero-Trust Cybersecurity Architectures.",
+    images: ["/opengraph-image"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  icons: {
+    icon: [{ url: "/favicon.ico", sizes: "any" }],
     shortcut: "/favicon.ico",
     apple: "/favicon.ico",
   },
+  category: "technology",
 };
 
 export default function RootLayout({
@@ -55,6 +115,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${plusJakarta.variable} ${oswald.variable} scroll-smooth`}>
+      <head>
+        <JsonLd />
+      </head>
       <body className="bg-brand-olive-dark text-brand-cream font-body selection:bg-brand-cream selection:text-brand-olive-dark antialiased relative">
         <FuturisticLoader />
         <ScrollCanvas />
